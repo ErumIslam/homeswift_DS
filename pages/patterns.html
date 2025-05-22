@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSwift Design System - Patterns</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M40 0L0 20V60L40 80L80 60V20L40 0Z" fill="#39005C"/>
+                    <path d="M30 20L10 30V50L30 60L50 50V30L30 20Z" fill="white"/>
+                    <path d="M50 20L30 30V50L50 60L70 50V30L50 20Z" fill="white"/>
+                </svg>
+                <span class="visually-hidden">HomeSwift</span>
+            </div>
+            <h1>HomeSwift Design System</h1>
+            <p class="header-description">Interaction Patterns</p>
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Main Navigation">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="../index.html">Introduction</a></li>
+                <li><a href="design-tokens.html">Design Tokens</a></li>
+                <li><a href="components.html">Components</a></li>
+                <li><a href="patterns.html" class="active">Patterns</a></li>
+                <li><a href="accessibility.html">Accessibility</a></li>
+                <li><a href="platform-guidelines.html">Platform Guidelines</a></li>
+                <li><a href="implementation.html">Implementation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" id="main-content">
+        <section class="section" id="patterns-overview">
+            <h2 class="section-title">Interaction Patterns</h2>
+            <p>Interaction patterns define how users interact with the HomeSwift platform. These patterns ensure consistency across the user experience and help users accomplish their goals efficiently.</p>
+            
+            <div class="subsection">
+                <h3>Pattern Principles</h3>
+                <p>HomeSwift interaction patterns are guided by these core principles:</p>
+                
+                <ul>
+                    <li><strong>Consistency:</strong> Patterns should be consistent across the platform to reduce cognitive load.</li>
+                    <li><strong>Efficiency:</strong> Patterns should help users accomplish tasks with minimal effort.</li>
+                    <li><strong>Feedback:</strong> Patterns should provide clear feedback on user actions.</li>
+                    <li><strong>Accessibility:</strong> Patterns should be accessible to all users, regardless of abilities.</li>
+                    <li><strong>Predictability:</strong> Patterns should behave in ways that users can predict.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="error-handling">
+            <h2 class="section-title">Error Handling</h2>
+            <p>Error handling patterns help users recover from errors and understand what went wrong.</p>
+            
+            <div class="subsection">
+                <h3>Form Validation</h3>
+                <p>Form validation helps users enter valid data and understand validation requirements.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Inline Validation</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div class="input-container">
+                                    <label for="email-error">Email Address</label>
+                                    <input type="email" id="email-error" class="input-field input-error" value="invalid-email">
+                                    <div class="error-message">Please enter a valid email address</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Validate input as the user types or on field blur</li>
+                                <li>Show error messages directly below the input field</li>
+                                <li>Use red (#FF3B30) for error states</li>
+                                <li>Provide clear, actionable error messages</li>
+                                <li>Maintain field values when errors occur</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Form Submission Errors</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="background-color: rgba(255, 59, 48, 0.1); border-left: 4px solid #FF3B30; padding: 16px; border-radius: 0 8px 8px 0; margin-bottom: 16px;">
+                                    <h5 style="color: #FF3B30; margin-top: 0; margin-bottom: 8px;">Unable to Complete Booking</h5>
+                                    <p style="margin-bottom: 0;">Please check your payment information and try again.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Display form-level errors at the top of the form</li>
+                                <li>Use a distinct visual treatment for error messages</li>
+                                <li>Provide clear instructions on how to resolve the error</li>
+                                <li>Maintain form data when errors occur</li>
+                                <li>Scroll to the error message automatically</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Error States</h3>
+                <p>Error states help users understand when something has gone wrong and how to recover.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Empty States</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="background-color: #F5F5F5; padding: 32px; border-radius: 8px; text-align: center;">
+                                    <div style="font-size: 48px; margin-bottom: 16px;">📭</div>
+                                    <h3 style="margin-top: 0; margin-bottom: 8px;">No Bookings Found</h3>
+                                    <p style="margin-bottom: 16px;">You haven't made any bookings yet.</p>
+                                    <button class="btn btn-primary">Book a Service</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Use clear, friendly messaging</li>
+                                <li>Include an illustration or icon</li>
+                                <li>Provide a clear call-to-action</li>
+                                <li>Avoid negative language</li>
+                                <li>Explain why the state exists</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Error Pages</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="background-color: #F5F5F5; padding: 32px; border-radius: 8px; text-align: center;">
+                                    <div style="font-size: 48px; margin-bottom: 16px;">🔍</div>
+                                    <h3 style="margin-top: 0; margin-bottom: 8px;">Page Not Found</h3>
+                                    <p style="margin-bottom: 16px;">The page you're looking for doesn't exist or has been moved.</p>
+                                    <button class="btn btn-primary">Go to Home</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Use clear, friendly messaging</li>
+                                <li>Include an illustration or icon</li>
+                                <li>Provide a clear way to recover</li>
+                                <li>Avoid technical jargon</li>
+                                <li>Maintain consistent navigation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accessibility-note">
+                <h5>Error Handling Accessibility</h5>
+                <ul>
+                    <li>Ensure error messages are announced to screen readers</li>
+                    <li>Use ARIA attributes to associate error messages with form fields</li>
+                    <li>Do not rely on color alone to indicate errors</li>
+                    <li>Provide clear instructions on how to resolve errors</li>
+                    <li>Ensure error messages are concise and actionable</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="loading-states">
+            <h2 class="section-title">Loading States</h2>
+            <p>Loading states provide feedback to users when content is being loaded or actions are being processed.</p>
+            
+            <div class="subsection">
+                <h3>Spinners</h3>
+                <p>Spinners indicate that content is loading or an action is being processed.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Button Loading State</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <button class="btn btn-primary" disabled style="position: relative; padding-left: 40px;">
+                                    <span style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; border: 2px solid rgba(255, 255, 255, 0.3); border-top-color: white; border-radius: 50%; animation: spin 1s linear infinite;"></span>
+                                    Loading...
+                                </button>
+                                <style>
+                                    @keyframes spin {
+                                        to { transform: translateY(-50%) rotate(360deg); }
+                                    }
+                                </style>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Replace button text with "Loading..." during processing</li>
+                                <li>Add a spinner to indicate activity</li>
+                                <li>Disable the button during loading</li>
+                                <li>Maintain button width to prevent layout shifts</li>
+                                <li>Return to original state when loading completes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Content Loading State</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="display: flex; justify-content: center; padding: 32px; background-color: #F5F5F5; border-radius: 8px;">
+                                    <div style="width: 40px; height: 40px; border: 4px solid rgba(57, 0, 92, 0.3); border-top-color: #39005C; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Use centered spinner for full-page or section loading</li>
+                                <li>Use primary brand color (#39005C) for spinner</li>
+                                <li>Size spinner appropriately for the loading context</li>
+                                <li>Consider adding a loading message for longer operations</li>
+                                <li>Add a timeout message for extended loading periods</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Skeleton Screens</h3>
+                <p>Skeleton screens provide a preview of the content structure while it's loading.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Card Skeleton</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div class="card" style="width: 300px; padding: 0; overflow: hidden;">
+                                    <div style="height: 150px; background-color: #F5F5F5;"></div>
+                                    <div style="padding: 16px;">
+                                        <div style="height: 24px; width: 70%; background-color: #F5F5F5; margin-bottom: 8px; border-radius: 4px;"></div>
+                                        <div style="height: 16px; width: 40%; background-color: #F5F5F5; margin-bottom: 16px; border-radius: 4px;"></div>
+                                        <div style="height: 40px; background-color: #F5F5F5; border-radius: 8px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Match the skeleton structure to the actual content</li>
+                                <li>Use light gray (#F5F5F5) for skeleton elements</li>
+                                <li>Consider adding a subtle animation to indicate loading</li>
+                                <li>Maintain consistent spacing and proportions</li>
+                                <li>Replace skeleton with actual content progressively</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accessibility-note">
+                <h5>Loading State Accessibility</h5>
+                <ul>
+                    <li>Announce loading states to screen readers using aria-live regions</li>
+                    <li>Provide text alternatives for visual loading indicators</li>
+                    <li>Ensure loading indicators have sufficient contrast</li>
+                    <li>Consider adding progress indicators for longer operations</li>
+                    <li>Ensure the UI remains usable during partial loading</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="animations">
+            <h2 class="section-title">Animations</h2>
+            <p>Animations provide feedback, guide attention, and enhance the user experience.</p>
+            
+            <div class="subsection">
+                <h3>Transition Animations</h3>
+                <p>Transition animations help users understand state changes and navigation.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Button Hover Animation</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <button class="btn btn-primary" style="transition: transform 0.2s ease, background-color 0.2s ease;">Hover Me</button>
+                                <style>
+                                    .btn:hover {
+                                        transform: translateY(-2px);
+                                    }
+                                </style>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Use subtle animations for interactive elements</li>
+                                <li>Keep animations short (200-300ms)</li>
+                                <li>Use easing functions for natural movement</li>
+                                <li>Ensure animations don't interfere with usability</li>
+                                <li>Provide a way to reduce motion for users who prefer it</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Page Transition</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; text-align: center;">
+                                    <p>Page transitions use fade and slide effects</p>
+                                    <button class="btn btn-primary">View Example</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Use consistent transitions for navigation</li>
+                                <li>Keep transitions short (300-500ms)</li>
+                                <li>Ensure transitions don't delay content access</li>
+                                <li>Use directional transitions for hierarchical navigation</li>
+                                <li>Respect reduced motion preferences</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Feedback Animations</h3>
+                <p>Feedback animations provide visual confirmation of user actions.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Success Animation</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="background-color: rgba(55, 198, 64, 0.1); border-radius: 8px; padding: 16px; text-align: center;">
+                                    <div style="width: 40px; height: 40px; background-color: #37C640; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                    <p style="margin: 0;">Booking Confirmed!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Use animations to confirm successful actions</li>
+                                <li>Keep animations simple and focused</li>
+                                <li>Use appropriate colors for different states (success, error, etc.)</li>
+                                <li>Ensure animations are visible but not distracting</li>
+                                <li>Provide text confirmation alongside animations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accessibility-note">
+                <h5>Animation Accessibility</h5>
+                <ul>
+                    <li>Respect the prefers-reduced-motion media query</li>
+                    <li>Provide alternative static states for users who prefer reduced motion</li>
+                    <li>Avoid animations that could trigger vestibular disorders</li>
+                    <li>Ensure animations don't interfere with screen reader announcements</li>
+                    <li>Keep animations subtle and purposeful</li>
+                </ul>
+                
+                <div class="code-example">
+                    <h4>Respecting Reduced Motion Preferences</h4>
+                    <pre><code class="language-css">/* Default animations */
+.btn {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="microinteractions">
+            <h2 class="section-title">Microinteractions</h2>
+            <p>Microinteractions are small, subtle animations and feedback that enhance the user experience.</p>
+            
+            <div class="subsection">
+                <h3>Button States</h3>
+                <p>Button states provide feedback on user interactions with buttons.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Button State Transitions</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <button class="btn btn-primary">Default</button>
+                            </div>
+                            <div class="component-variant">
+                                <button class="btn btn-primary btn-hover">Hover</button>
+                            </div>
+                            <div class="component-variant">
+                                <button class="btn btn-primary btn-pressed">Pressed</button>
+                            </div>
+                            <div class="component-variant">
+                                <button class="btn btn-primary btn-focus">Focus</button>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Provide visual feedback for all interactive states</li>
+                                <li>Use smooth transitions between states</li>
+                                <li>Ensure states have sufficient contrast</li>
+                                <li>Maintain consistent behavior across similar components</li>
+                                <li>Ensure states are perceivable by all users</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Form Field Interactions</h3>
+                <p>Form field interactions provide feedback on user interactions with form fields.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Input Field Focus</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div class="input-container">
+                                    <label for="input-default-2">Default Input</label>
+                                    <input type="text" id="input-default-2" class="input-field" placeholder="Enter text">
+                                </div>
+                            </div>
+                            <div class="component-variant">
+                                <div class="input-container">
+                                    <label for="input-focus-2">Focused Input</label>
+                                    <input type="text" id="input-focus-2" class="input-field input-focus" placeholder="Enter text">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Highlight form fields on focus</li>
+                                <li>Use smooth transitions for focus states</li>
+                                <li>Ensure focus states are clearly visible</li>
+                                <li>Maintain consistent focus behavior across form elements</li>
+                                <li>Provide additional visual cues for active fields</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accessibility-note">
+                <h5>Microinteraction Accessibility</h5>
+                <ul>
+                    <li>Ensure microinteractions don't rely solely on hover states</li>
+                    <li>Provide keyboard-accessible alternatives for hover interactions</li>
+                    <li>Ensure focus states are clearly visible</li>
+                    <li>Use ARIA attributes to communicate state changes to screen readers</li>
+                    <li>Test microinteractions with assistive technologies</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="content-strategy">
+            <h2 class="section-title">Content Strategy</h2>
+            <p>Content strategy defines how content is structured, written, and presented across the HomeSwift platform.</p>
+            
+            <div class="subsection">
+                <h3>Content Hierarchy</h3>
+                <p>Content hierarchy helps users understand the relative importance of different pieces of content.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Page Hierarchy Example</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px;">
+                                    <h2 style="font-size: 30px; margin-top: 0; margin-bottom: 16px;">Cleaning Services</h2>
+                                    <p style="margin-bottom: 24px;">Professional cleaning services for your home or office.</p>
+                                    
+                                    <h3 style="font-size: 24px; margin-bottom: 12px;">Regular Cleaning</h3>
+                                    <p style="margin-bottom: 16px;">Our regular cleaning service includes dusting, vacuuming, and mopping.</p>
+                                    
+                                    <h4 style="font-size: 20px; margin-bottom: 8px;">What's Included</h4>
+                                    <ul style="margin-bottom: 16px;">
+                                        <li>Dusting all surfaces</li>
+                                        <li>Vacuuming carpets and rugs</li>
+                                        <li>Mopping hard floors</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="component-specs">
+                            <h4>Specifications</h4>
+                            <ul>
+                                <li>Use clear heading hierarchy (H1 > H2 > H3 > H4)</li>
+                                <li>Maintain consistent spacing between content sections</li>
+                                <li>Use visual cues to indicate content relationships</li>
+                                <li>Ensure primary content is prominent</li>
+                                <li>Group related content together</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Tone and Voice</h3>
+                <p>Tone and voice define how HomeSwift communicates with users.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Voice Examples</h4>
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <h4 style="margin-top: 0; margin-bottom: 8px;">Friendly and Approachable</h4>
+                            <p style="margin-bottom: 0;">"Welcome back! We've found some great cleaning services in your area."</p>
+                        </div>
+                        
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <h4 style="margin-top: 0; margin-bottom: 8px;">Clear and Direct</h4>
+                            <p style="margin-bottom: 0;">"Your booking is confirmed for May 25 at 10:00 AM. Your cleaner will arrive within 15 minutes of the scheduled time."</p>
+                        </div>
+                        
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px;">
+                            <h4 style="margin-top: 0; margin-bottom: 8px;">Helpful and Supportive</h4>
+                            <p style="margin-bottom: 0;">"Need to reschedule? No problem! You can change your booking up to 24 hours before the scheduled time without any fees."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h4>Voice Guidelines</h4>
+                    <ul>
+                        <li><strong>Friendly but Professional:</strong> Warm and approachable without being overly casual</li>
+                        <li><strong>Clear and Concise:</strong> Direct and easy to understand</li>
+                        <li><strong>Helpful and Supportive:</strong> Focused on solving user problems</li>
+                        <li><strong>Positive and Encouraging:</strong> Emphasizing benefits and solutions</li>
+                        <li><strong>Culturally Relevant:</strong> Appropriate for the Moroccan market</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Localization Guidelines</h3>
+                <p>Localization guidelines ensure content is appropriate for different languages and cultures.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Language Support</h4>
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <h4 style="margin-top: 0; margin-bottom: 8px;">Supported Languages</h4>
+                            <ul style="margin-bottom: 0;">
+                                <li>Arabic (Primary)</li>
+                                <li>French (Secondary)</li>
+                                <li>English (Tertiary)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h4>Localization Specifications</h4>
+                    <ul>
+                        <li><strong>Text Expansion:</strong> Allow for 30-50% text expansion in translations</li>
+                        <li><strong>Date and Time Formats:</strong> Use locale-appropriate formats</li>
+                        <li><strong>Currency:</strong> Display in Moroccan Dirham (MAD) with appropriate formatting</li>
+                        <li><strong>Cultural Considerations:</strong> Respect local customs and cultural norms</li>
+                        <li><strong>Right-to-Left Support:</strong> Full support for Arabic right-to-left layout</li>
+                    </ul>
+                </div>
+                
+                <div class="code-example">
+                    <h4>RTL Support</h4>
+                    <pre><code class="language-css">/* Base styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  color: var(--color-midnight-blue);
+}
+
+/* RTL support */
+body[dir="rtl"] {
+  font-family: 'Poppins', 'Tajawal', sans-serif;
+}
+
+.card {
+  padding: var(--spacing-4);
+}
+
+/* Adjust padding for RTL */
+body[dir="rtl"] .card {
+  padding-right: var(--spacing-4);
+  padding-left: var(--spacing-4);
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="accessibility-note">
+                <h5>Content Accessibility</h5>
+                <ul>
+                    <li>Use clear, simple language</li>
+                    <li>Avoid idioms and colloquialisms that may not translate well</li>
+                    <li>Provide text alternatives for non-text content</li>
+                    <li>Ensure content is structured logically</li>
+                    <li>Use proper heading hierarchy</li>
+                    <li>Consider reading level and comprehension</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 HomeSwift. All rights reserved.</p>
+            <p>This design system is confidential and proprietary to HomeSwift.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

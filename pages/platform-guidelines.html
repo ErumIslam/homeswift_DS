@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSwift Design System - Platform Guidelines</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M40 0L0 20V60L40 80L80 60V20L40 0Z" fill="#39005C"/>
+                    <path d="M30 20L10 30V50L30 60L50 50V30L30 20Z" fill="white"/>
+                    <path d="M50 20L30 30V50L50 60L70 50V30L50 20Z" fill="white"/>
+                </svg>
+                <span class="visually-hidden">HomeSwift</span>
+            </div>
+            <h1>HomeSwift Design System</h1>
+            <p class="header-description">Platform Guidelines</p>
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Main Navigation">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="../index.html">Introduction</a></li>
+                <li><a href="design-tokens.html">Design Tokens</a></li>
+                <li><a href="components.html">Components</a></li>
+                <li><a href="patterns.html">Patterns</a></li>
+                <li><a href="accessibility.html">Accessibility</a></li>
+                <li><a href="platform-guidelines.html" class="active">Platform Guidelines</a></li>
+                <li><a href="implementation.html">Implementation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" id="main-content">
+        <section class="section" id="platform-overview">
+            <h2 class="section-title">Platform Guidelines</h2>
+            <p>HomeSwift is a multi-platform service that operates across mobile apps (iOS and Android), web applications, provider apps, and admin dashboards. These guidelines ensure consistency while respecting the unique characteristics of each platform.</p>
+            
+            <div class="subsection">
+                <h3>Cross-Platform Principles</h3>
+                <p>While each platform has its own specific guidelines, these core principles apply across all platforms:</p>
+                
+                <ul>
+                    <li><strong>Consistent Brand Identity:</strong> Maintain consistent brand colors, typography, and visual language across all platforms.</li>
+                    <li><strong>Platform-Appropriate Interactions:</strong> Adapt interaction patterns to match platform conventions and user expectations.</li>
+                    <li><strong>Shared Component Library:</strong> Use the same core components with platform-specific adaptations.</li>
+                    <li><strong>Accessibility First:</strong> Ensure all platforms meet WCAG 2.1 AA standards.</li>
+                    <li><strong>Responsive Design:</strong> Adapt layouts and components to different screen sizes and orientations.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="mobile-guidelines">
+            <h2 class="section-title">Mobile App Guidelines</h2>
+            <p>The HomeSwift mobile apps for iOS and Android are the primary touchpoint for customers seeking home services.</p>
+            
+            <div class="subsection">
+                <h3>iOS Guidelines</h3>
+                <p>The iOS app follows Apple's Human Interface Guidelines while maintaining HomeSwift's brand identity.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>iOS-Specific Components</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; width: 300px;">
+                                    <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+                                        <h4 style="margin-top: 0;">iOS Navigation Bar</h4>
+                                        <p>Uses iOS-native navigation patterns with HomeSwift styling</p>
+                                    </div>
+                                    <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+                                        <h4 style="margin-top: 0;">iOS Action Sheet</h4>
+                                        <p>Follows iOS action sheet patterns with HomeSwift colors</p>
+                                    </div>
+                                    <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px;">
+                                        <h4 style="margin-top: 0;">iOS Tab Bar</h4>
+                                        <p>Uses standard iOS tab bar with HomeSwift icons</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h4>iOS Design Specifications</h4>
+                    <ul>
+                        <li><strong>Navigation:</strong> iOS-native navigation bar with HomeSwift branding</li>
+                        <li><strong>Tab Bar:</strong> Standard iOS tab bar with HomeSwift icons</li>
+                        <li><strong>Buttons:</strong> Follow iOS button styles with HomeSwift colors</li>
+                        <li><strong>Typography:</strong> Poppins font (not SF Pro) to maintain brand consistency</li>
+                        <li><strong>Gestures:</strong> Support standard iOS gestures (swipe, pinch, tap)</li>
+                        <li><strong>Dark Mode:</strong> Full support for iOS dark mode</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h4>iOS Technical Requirements</h4>
+                    <ul>
+                        <li>Support latest iOS version and one version back</li>
+                        <li>Optimize for iPhone and iPad</li>
+                        <li>Support all iPhone screen sizes</li>
+                        <li>Implement VoiceOver accessibility</li>
+                        <li>Support Dynamic Type for text scaling</li>
+                        <li>Implement proper keyboard handling</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Android Guidelines</h3>
+                <p>The Android app follows Material Design guidelines while maintaining HomeSwift's brand identity.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Android-Specific Components</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; width: 300px;">
+                                    <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+                                        <h4 style="margin-top: 0;">Android App Bar</h4>
+                                        <p>Uses Material Design app bar with HomeSwift styling</p>
+                                    </div>
+                                    <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+                                        <h4 style="margin-top: 0;">Android Bottom Sheet</h4>
+                                        <p>Follows Material Design bottom sheet patterns</p>
+                                    </div>
+                                    <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px;">
+                                        <h4 style="margin-top: 0;">Android Bottom Navigation</h4>
+                                        <p>Uses Material Design bottom navigation with HomeSwift icons</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h4>Android Design Specifications</h4>
+                    <ul>
+                        <li><strong>Navigation:</strong> Material Design app bar with HomeSwift branding</li>
+                        <li><strong>Bottom Navigation:</strong> Material Design bottom navigation with HomeSwift icons</li>
+                        <li><strong>Buttons:</strong> Follow Material Design button styles with HomeSwift colors</li>
+                        <li><strong>Typography:</strong> Poppins font (not Roboto) to maintain brand consistency</li>
+                        <li><strong>Gestures:</strong> Support standard Android gestures</li>
+                        <li><strong>Dark Theme:</strong> Full support for Android dark theme</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h4>Android Technical Requirements</h4>
+                    <ul>
+                        <li>Support Android 8.0 (API level 26) and above</li>
+                        <li>Optimize for various screen sizes and densities</li>
+                        <li>Implement TalkBack accessibility</li>
+                        <li>Support text scaling</li>
+                        <li>Implement proper keyboard handling</li>
+                        <li>Support both portrait and landscape orientations</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="web-guidelines">
+            <h2 class="section-title">Web App Guidelines</h2>
+            <p>The HomeSwift web application provides a comprehensive service booking experience for desktop and mobile web users.</p>
+            
+            <div class="subsection">
+                <h3>Responsive Design</h3>
+                <p>The web app uses responsive design to adapt to different screen sizes and devices.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Responsive Breakpoints</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px;">
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: left; padding: 8px; border-bottom: 1px solid #DDDDDD;">Breakpoint</th>
+                                                <th style="text-align: left; padding: 8px; border-bottom: 1px solid #DDDDDD;">Width</th>
+                                                <th style="text-align: left; padding: 8px; border-bottom: 1px solid #DDDDDD;">Device Type</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Small</td>
+                                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">< 576px</td>
+                                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Mobile phones</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Medium</td>
+                                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">576px - 768px</td>
+                                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Large phones, small tablets</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Large</td>
+                                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">768px - 992px</td>
+                                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Tablets, small laptops</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Extra Large</td>
+                                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">992px - 1200px</td>
+                                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Laptops, desktops</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px;">XXL</td>
+                                                <td style="padding: 8px;">≥ 1200px</td>
+                                                <td style="padding: 8px;">Large desktops</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-example">
+                    <h4>CSS Media Queries</h4>
+                    <pre><code class="language-css">/* Small devices (phones) */
+@media (max-width: 575.98px) {
+  /* Small device styles */
+}
+
+/* Medium devices (large phones, small tablets) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Medium device styles */
+}
+
+/* Large devices (tablets, small laptops) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Large device styles */
+}
+
+/* Extra large devices (laptops, desktops) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Extra large device styles */
+}
+
+/* XXL devices (large desktops) */
+@media (min-width: 1200px) {
+  /* XXL device styles */
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Web-Specific Components</h3>
+                <p>The web app includes components specifically designed for web interfaces.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Desktop Navigation</h4>
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="font-weight: 600;">HomeSwift</div>
+                                    <div style="display: flex; gap: 16px;">
+                                        <div>Home</div>
+                                        <div>Services</div>
+                                        <div>Providers</div>
+                                        <div>Bookings</div>
+                                        <div>Account</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>Mobile Navigation</h4>
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px; width: 300px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="font-weight: 600;">HomeSwift</div>
+                                    <div>☰</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h4>Web Design Specifications</h4>
+                    <ul>
+                        <li><strong>Navigation:</strong> Horizontal navigation for desktop, hamburger menu for mobile</li>
+                        <li><strong>Grid System:</strong> 12-column grid for layout flexibility</li>
+                        <li><strong>Typography:</strong> Poppins font with responsive sizing</li>
+                        <li><strong>Hover States:</strong> Interactive elements have hover states on desktop</li>
+                        <li><strong>Focus States:</strong> Clear focus indicators for keyboard navigation</li>
+                        <li><strong>Dark Mode:</strong> Support for browser/OS dark mode preference</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h4>Web Technical Requirements</h4>
+                    <ul>
+                        <li>Support latest versions of Chrome, Firefox, Safari, and Edge</li>
+                        <li>Responsive design for all screen sizes</li>
+                        <li>Progressive enhancement approach</li>
+                        <li>Optimize for performance (Core Web Vitals)</li>
+                        <li>Implement keyboard navigation</li>
+                        <li>Support screen readers (NVDA, VoiceOver, JAWS)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="provider-app-guidelines">
+            <h2 class="section-title">Provider App Guidelines</h2>
+            <p>The HomeSwift Provider App is used by service providers to manage bookings, schedules, and client communications.</p>
+            
+            <div class="subsection">
+                <h3>Provider App Specifics</h3>
+                <p>The Provider App follows the same design principles as the customer apps but with a focus on provider workflows.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Provider-Specific Components</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; width: 300px;">
+                                    <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+                                        <h4 style="margin-top: 0;">Schedule Calendar</h4>
+                                        <p>Provider-focused calendar view for managing bookings</p>
+                                    </div>
+                                    <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+                                        <h4 style="margin-top: 0;">Job Details Card</h4>
+                                        <p>Detailed view of upcoming jobs with client information</p>
+                                    </div>
+                                    <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px;">
+                                        <h4 style="margin-top: 0;">Earnings Dashboard</h4>
+                                        <p>Financial overview for service providers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h4>Provider App Design Specifications</h4>
+                    <ul>
+                        <li><strong>Color Scheme:</strong> Same brand colors with emphasis on provider-specific actions</li>
+                        <li><strong>Typography:</strong> Poppins font with emphasis on readability in field conditions</li>
+                        <li><strong>Components:</strong> Optimized for quick interactions during service delivery</li>
+                        <li><strong>Navigation:</strong> Simplified navigation focused on provider workflows</li>
+                        <li><strong>Offline Support:</strong> Clear indicators for offline/online status</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h4>Provider App Technical Requirements</h4>
+                    <ul>
+                        <li>Support same platforms as customer apps (iOS and Android)</li>
+                        <li>Optimize for offline use with data synchronization</li>
+                        <li>Implement location services for route optimization</li>
+                        <li>Support barcode/QR code scanning for inventory</li>
+                        <li>Optimize battery usage for all-day operation</li>
+                        <li>Support push notifications for booking alerts</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="admin-dashboard-guidelines">
+            <h2 class="section-title">Admin Dashboard Guidelines</h2>
+            <p>The HomeSwift Admin Dashboard is a web-based tool for platform administrators to manage users, providers, bookings, and system settings.</p>
+            
+            <div class="subsection">
+                <h3>Admin Dashboard Specifics</h3>
+                <p>The Admin Dashboard follows the same design principles as the customer web app but with a focus on administrative workflows.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Admin-Specific Components</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; width: 300px;">
+                                    <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+                                        <h4 style="margin-top: 0;">Data Tables</h4>
+                                        <p>Sortable, filterable tables for data management</p>
+                                    </div>
+                                    <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+                                        <h4 style="margin-top: 0;">Dashboard Widgets</h4>
+                                        <p>Customizable widgets for key metrics and reports</p>
+                                    </div>
+                                    <div style="background-color: #FFFFFF; border-radius: 10px; padding: 16px;">
+                                        <h4 style="margin-top: 0;">Bulk Action Tools</h4>
+                                        <p>Tools for managing multiple items simultaneously</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h4>Admin Dashboard Design Specifications</h4>
+                    <ul>
+                        <li><strong>Layout:</strong> Dense information display with clear hierarchy</li>
+                        <li><strong>Color Scheme:</strong> Same brand colors with emphasis on status indicators</li>
+                        <li><strong>Typography:</strong> Poppins font with emphasis on readability of dense information</li>
+                        <li><strong>Components:</strong> Data-dense components for administrative tasks</li>
+                        <li><strong>Navigation:</strong> Comprehensive navigation with quick access to all sections</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h4>Admin Dashboard Technical Requirements</h4>
+                    <ul>
+                        <li>Support latest versions of Chrome, Firefox, Safari, and Edge</li>
+                        <li>Optimize for desktop use with responsive support for tablets</li>
+                        <li>Implement advanced filtering and search capabilities</li>
+                        <li>Support data export in multiple formats (CSV, Excel, PDF)</li>
+                        <li>Implement role-based access control</li>
+                        <li>Support audit logging for administrative actions</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="cross-platform-consistency">
+            <h2 class="section-title">Cross-Platform Consistency</h2>
+            <p>Maintaining consistency across platforms while respecting platform-specific conventions is essential for a cohesive user experience.</p>
+            
+            <div class="subsection">
+                <h3>Consistency Checklist</h3>
+                <ul>
+                    <li><strong>Visual Identity:</strong>
+                        <ul>
+                            <li>Use consistent brand colors across all platforms</li>
+                            <li>Maintain Poppins as the primary font family</li>
+                            <li>Use consistent iconography with platform-appropriate styling</li>
+                        </ul>
+                    </li>
+                    <li><strong>Component Behavior:</strong>
+                        <ul>
+                            <li>Adapt component behavior to platform conventions</li>
+                            <li>Maintain consistent naming and terminology</li>
+                            <li>Ensure similar components have similar functionality</li>
+                        </ul>
+                    </li>
+                    <li><strong>Content:</strong>
+                        <ul>
+                            <li>Use consistent tone and voice across platforms</li>
+                            <li>Maintain consistent terminology for features and actions</li>
+                            <li>Adapt content length to platform constraints</li>
+                        </ul>
+                    </li>
+                    <li><strong>Workflows:</strong>
+                        <ul>
+                            <li>Maintain consistent user flows across platforms</li>
+                            <li>Adapt interaction patterns to platform conventions</li>
+                            <li>Ensure feature parity where appropriate</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Platform-Specific Adaptations</h3>
+                <p>While maintaining consistency, certain elements should be adapted to platform conventions:</p>
+                
+                <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left; padding: 8px; border-bottom: 1px solid #DDDDDD;">Element</th>
+                                <th style="text-align: left; padding: 8px; border-bottom: 1px solid #DDDDDD;">iOS</th>
+                                <th style="text-align: left; padding: 8px; border-bottom: 1px solid #DDDDDD;">Android</th>
+                                <th style="text-align: left; padding: 8px; border-bottom: 1px solid #DDDDDD;">Web</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Navigation</td>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">iOS navigation bar</td>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Material app bar</td>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Responsive navigation</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Tab Navigation</td>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">iOS tab bar</td>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Bottom navigation</td>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Horizontal tabs</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Modals</td>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">iOS sheet</td>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Bottom sheet</td>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Modal dialog</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Form Controls</td>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">iOS-styled</td>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Material-styled</td>
+                                <td style="padding: 8px; border-bottom: 1px solid #DDDDDD;">Web-styled</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px;">Gestures</td>
+                                <td style="padding: 8px;">iOS gestures</td>
+                                <td style="padding: 8px;">Android gestures</td>
+                                <td style="padding: 8px;">Mouse + touch</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 HomeSwift. All rights reserved.</p>
+            <p>This design system is confidential and proprietary to HomeSwift.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

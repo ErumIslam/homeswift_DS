@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSwift Design System - Design Tokens</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M40 0L0 20V60L40 80L80 60V20L40 0Z" fill="#39005C"/>
+                    <path d="M30 20L10 30V50L30 60L50 50V30L30 20Z" fill="white"/>
+                    <path d="M50 20L30 30V50L50 60L70 50V30L50 20Z" fill="white"/>
+                </svg>
+                <span class="visually-hidden">HomeSwift</span>
+            </div>
+            <h1>HomeSwift Design System</h1>
+            <p class="header-description">Design Tokens</p>
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Main Navigation">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="../index.html">Introduction</a></li>
+                <li><a href="design-tokens.html" class="active">Design Tokens</a></li>
+                <li><a href="components.html">Components</a></li>
+                <li><a href="patterns.html">Patterns</a></li>
+                <li><a href="accessibility.html">Accessibility</a></li>
+                <li><a href="platform-guidelines.html">Platform Guidelines</a></li>
+                <li><a href="implementation.html">Implementation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" id="main-content">
+        <section class="section" id="design-tokens-overview">
+            <h2 class="section-title">Design Tokens</h2>
+            <p>Design tokens are the foundational elements of the HomeSwift design system. They define the visual properties that are used consistently across all platforms and components.</p>
+            
+            <div class="subsection">
+                <h3>What are Design Tokens?</h3>
+                <p>Design tokens are named entities that store visual design attributes. They are used in place of hardcoded values to ensure consistency across the platform. HomeSwift uses design tokens for colors, typography, spacing, shadows, and border styles.</p>
+            </div>
+        </section>
+
+        <section class="section" id="colors">
+            <h2 class="section-title">Colors</h2>
+            <p>The HomeSwift color palette is designed to create a professional, trustworthy, and culturally relevant experience for users in Morocco.</p>
+            
+            <div class="subsection">
+                <h3>Primary Colors</h3>
+                <p>Primary colors are the main brand colors used throughout the platform. They define the visual identity of HomeSwift.</p>
+                
+                <div class="color-grid">
+                    <div class="color-item">
+                        <div class="color-swatch" style="background-color: #39005C; color: white;">
+                            <span class="contrast-label">13.5:1</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Ripe Plum Purple</div>
+                            <div class="color-hex">#39005C</div>
+                            <div class="color-usage">Headers, primary buttons, important UI elements</div>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background-color: #00305C; color: white;">
+                            <span class="contrast-label">10.7:1</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Midnight Blue</div>
+                            <div class="color-hex">#00305C</div>
+                            <div class="color-usage">Text, secondary buttons, background elements</div>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background-color: #FFFFFF; color: #00305C; border: 1px solid #EEEEEE;">
+                            <span class="contrast-label">10.7:1</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">White</div>
+                            <div class="color-hex">#FFFFFF</div>
+                            <div class="color-usage">Backgrounds, contrast elements</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-example">
+                    <h4>CSS Variables</h4>
+                    <pre><code class="language-css">:root {
+  --color-plum-purple: #39005C;
+  --color-midnight-blue: #00305C;
+  --color-white: #FFFFFF;
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Secondary Colors</h3>
+                <p>Secondary colors complement the primary palette and are used for specific UI elements and states.</p>
+                
+                <div class="color-grid">
+                    <div class="color-item">
+                        <div class="color-swatch" style="background-color: #37C640; color: white;">
+                            <span class="contrast-label">2.5:1</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Green Lime</div>
+                            <div class="color-hex">#37C640</div>
+                            <div class="color-usage">Success states, confirmation buttons, highlights</div>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background-color: #808080; color: white;">
+                            <span class="contrast-label">4.6:1</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Gray</div>
+                            <div class="color-hex">#808080</div>
+                            <div class="color-usage">Disabled elements, secondary text, dividers</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-example">
+                    <h4>CSS Variables</h4>
+                    <pre><code class="language-css">:root {
+  --color-green-lime: #37C640;
+  --color-gray: #808080;
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Status Colors</h3>
+                <p>Status colors communicate the state of system elements, processes, or user actions.</p>
+                
+                <div class="color-grid">
+                    <div class="color-item">
+                        <div class="color-swatch" style="background-color: #37C640; color: white;">
+                            <span class="contrast-label">2.5:1</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Success</div>
+                            <div class="color-hex">#37C640</div>
+                            <div class="color-usage">Success messages, confirmations</div>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background-color: #FFCC00; color: #00305C;">
+                            <span class="contrast-label">3.2:1</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Warning</div>
+                            <div class="color-hex">#FFCC00</div>
+                            <div class="color-usage">Warning messages, alerts</div>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-swatch" style="background-color: #FF3B30; color: white;">
+                            <span class="contrast-label">3.9:1</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Error</div>
+                            <div class="color-hex">#FF3B30</div>
+                            <div class="color-usage">Error messages, critical alerts</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-example">
+                    <h4>CSS Variables</h4>
+                    <pre><code class="language-css">:root {
+  --color-success: #37C640;
+  --color-warning: #FFCC00;
+  --color-error: #FF3B30;
+}</code></pre>
+                </div>
+                
+                <div class="accessibility-note">
+                    <h5>Color Accessibility Note</h5>
+                    <p>Green Lime (#37C640) does not meet the 4.5:1 contrast ratio required for normal text on white backgrounds. Use it only for large text (18pt+), UI components, or with additional visual cues.</p>
+                    <p>Warning Yellow (#FFCC00) also does not meet the 4.5:1 contrast ratio for normal text. Always use it with dark text and additional visual cues.</p>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Color Usage Guidelines</h3>
+                <ul>
+                    <li>Use primary colors for main UI elements and brand identity</li>
+                    <li>Use secondary colors sparingly to highlight important elements</li>
+                    <li>Use status colors consistently to communicate system states</li>
+                    <li>Ensure sufficient contrast for all text elements</li>
+                    <li>Never use color alone to convey information</li>
+                    <li>Consider cultural associations of colors in the Moroccan context</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="typography">
+            <h2 class="section-title">Typography</h2>
+            <p>HomeSwift uses Poppins as its primary font family to create a modern, professional, and readable interface.</p>
+            
+            <div class="subsection">
+                <h3>Font Family</h3>
+                <p>Poppins is a geometric sans-serif typeface with a clean, modern aesthetic. It provides excellent readability across all screen sizes and devices.</p>
+                
+                <div class="code-example">
+                    <h4>CSS Import</h4>
+                    <pre><code class="language-css">@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');</code></pre>
+                    
+                    <h4>CSS Variables</h4>
+                    <pre><code class="language-css">:root {
+  --font-family-primary: 'Poppins', sans-serif;
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Type Scale</h3>
+                <p>HomeSwift uses a consistent type scale to create visual hierarchy and improve readability.</p>
+                
+                <div class="typography-showcase">
+                    <div class="typography-item">
+                        <div class="showcase-text" style="font-size: 36px; font-weight: 700; line-height: 1.2;">Heading 1</div>
+                        <div class="typography-specs">36px / Bold (700) / Line height: 1.2 / Margin bottom: 24px</div>
+                    </div>
+                    <div class="typography-item">
+                        <div class="showcase-text" style="font-size: 30px; font-weight: 700; line-height: 1.2;">Heading 2</div>
+                        <div class="typography-specs">30px / Bold (700) / Line height: 1.2 / Margin bottom: 20px</div>
+                    </div>
+                    <div class="typography-item">
+                        <div class="showcase-text" style="font-size: 24px; font-weight: 600; line-height: 1.3;">Heading 3</div>
+                        <div class="typography-specs">24px / Semi-Bold (600) / Line height: 1.3 / Margin bottom: 16px</div>
+                    </div>
+                    <div class="typography-item">
+                        <div class="showcase-text" style="font-size: 20px; font-weight: 600; line-height: 1.3;">Heading 4</div>
+                        <div class="typography-specs">20px / Semi-Bold (600) / Line height: 1.3 / Margin bottom: 12px</div>
+                    </div>
+                    <div class="typography-item">
+                        <div class="showcase-text" style="font-size: 16px; font-weight: 400; line-height: 1.5;">Body Text</div>
+                        <div class="typography-specs">16px / Regular (400) / Line height: 1.5 / Margin bottom: 16px</div>
+                    </div>
+                    <div class="typography-item">
+                        <div class="showcase-text" style="font-size: 16px; font-weight: 600; line-height: 1.5;">Body Bold</div>
+                        <div class="typography-specs">16px / Semi-Bold (600) / Line height: 1.5 / Margin bottom: 16px</div>
+                    </div>
+                    <div class="typography-item">
+                        <div class="showcase-text" style="font-size: 14px; font-weight: 400; line-height: 1.4;">Caption</div>
+                        <div class="typography-specs">14px / Regular (400) / Line height: 1.4 / Margin bottom: 8px</div>
+                    </div>
+                    <div class="typography-item">
+                        <div class="showcase-text" style="font-size: 12px; font-weight: 400; line-height: 1.4;">Small Text</div>
+                        <div class="typography-specs">12px / Regular (400) / Line height: 1.4 / Margin bottom: 8px</div>
+                    </div>
+                </div>
+                
+                <div class="code-example">
+                    <h4>CSS Variables</h4>
+                    <pre><code class="language-css">:root {
+  --font-size-h1: 36px;
+  --font-size-h2: 30px;
+  --font-size-h3: 24px;
+  --font-size-h4: 20px;
+  --font-size-body: 16px;
+  --font-size-caption: 14px;
+  --font-size-small: 12px;
+  
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-heading: 1.2;
+  --line-height-subheading: 1.3;
+  --line-height-body: 1.5;
+  --line-height-caption: 1.4;
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Typography Usage Guidelines</h3>
+                <ul>
+                    <li>Use the type scale consistently to maintain visual hierarchy</li>
+                    <li>Maintain minimum font sizes for readability (16px for body text)</li>
+                    <li>Use appropriate line spacing (1.5x font size for body text)</li>
+                    <li>Limit line length to 80 characters for optimal readability</li>
+                    <li>Use font weights to create emphasis and hierarchy</li>
+                    <li>Ensure sufficient contrast between text and background</li>
+                </ul>
+                
+                <div class="accessibility-note">
+                    <h5>Typography Accessibility</h5>
+                    <p>All text must have a minimum contrast ratio of 4.5:1 against its background. Body text should be at least 16px to ensure readability across devices. Text should be resizable up to 200% without loss of content or functionality.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="spacing">
+            <h2 class="section-title">Spacing</h2>
+            <p>HomeSwift uses an 8px spacing scale to create consistent spacing throughout the interface.</p>
+            
+            <div class="subsection">
+                <h3>Spacing Scale</h3>
+                <p>The spacing scale is based on multiples of 4px, with 8px as the primary increment. This creates a consistent rhythm throughout the interface.</p>
+                
+                <div class="spacing-showcase">
+                    <div class="spacing-item">
+                        <div class="spacing-block" style="width: 4px; height: 40px;"></div>
+                        <div class="spacing-label">4px</div>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-block" style="width: 8px; height: 40px;"></div>
+                        <div class="spacing-label">8px</div>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-block" style="width: 12px; height: 40px;"></div>
+                        <div class="spacing-label">12px</div>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-block" style="width: 16px; height: 40px;"></div>
+                        <div class="spacing-label">16px</div>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-block" style="width: 20px; height: 40px;"></div>
+                        <div class="spacing-label">20px</div>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-block" style="width: 24px; height: 40px;"></div>
+                        <div class="spacing-label">24px</div>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-block" style="width: 32px; height: 40px;"></div>
+                        <div class="spacing-label">32px</div>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-block" style="width: 40px; height: 40px;"></div>
+                        <div class="spacing-label">40px</div>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-block" style="width: 48px; height: 40px;"></div>
+                        <div class="spacing-label">48px</div>
+                    </div>
+                </div>
+                
+                <div class="code-example">
+                    <h4>CSS Variables</h4>
+                    <pre><code class="language-css">:root {
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Spacing Usage Guidelines</h3>
+                <ul>
+                    <li>Use the spacing scale consistently for margins, padding, and layout</li>
+                    <li>Use smaller spacing values (4-8px) for related elements</li>
+                    <li>Use medium spacing values (12-24px) for groups of elements</li>
+                    <li>Use larger spacing values (32-48px) for major sections</li>
+                    <li>Maintain consistent spacing within components</li>
+                    <li>Adjust spacing responsively for different screen sizes</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="shadows">
+            <h2 class="section-title">Shadows and Effects</h2>
+            <p>HomeSwift uses shadows to create depth and hierarchy in the interface.</p>
+            
+            <div class="subsection">
+                <h3>Shadow Scale</h3>
+                <p>Shadows are used to create elevation and focus in the interface. HomeSwift uses three shadow levels for different purposes.</p>
+                
+                <div class="shadow-showcase">
+                    <div class="shadow-item">
+                        <div class="shadow-example" style="box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);"></div>
+                        <div class="shadow-info">
+                            <div class="shadow-name">Small Shadow</div>
+                            <div class="shadow-value">0px 2px 4px rgba(0, 0, 0, 0.05)</div>
+                            <div class="shadow-usage">Subtle elevation, buttons, small components</div>
+                        </div>
+                    </div>
+                    <div class="shadow-item">
+                        <div class="shadow-example" style="box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);"></div>
+                        <div class="shadow-info">
+                            <div class="shadow-name">Medium Shadow</div>
+                            <div class="shadow-value">0px 2px 8px rgba(0, 0, 0, 0.1)</div>
+                            <div class="shadow-usage">Cards, containers, dropdown menus</div>
+                        </div>
+                    </div>
+                    <div class="shadow-item">
+                        <div class="shadow-example" style="box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);"></div>
+                        <div class="shadow-info">
+                            <div class="shadow-name">Large Shadow</div>
+                            <div class="shadow-value">0px 4px 16px rgba(0, 0, 0, 0.15)</div>
+                            <div class="shadow-usage">Modals, popovers, elevated content</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-example">
+                    <h4>CSS Variables</h4>
+                    <pre><code class="language-css">:root {
+  --shadow-small: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-large: 0px 4px 16px rgba(0, 0, 0, 0.15);
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Focus Effects</h3>
+                <p>Focus effects are used to indicate the currently focused element for keyboard navigation.</p>
+                
+                <div class="shadow-showcase">
+                    <div class="shadow-item">
+                        <div class="shadow-example" style="box-shadow: 0 0 0 2px #37C640; border-radius: 8px;"></div>
+                        <div class="shadow-info">
+                            <div class="shadow-name">Focus Outline</div>
+                            <div class="shadow-value">0 0 0 2px #37C640</div>
+                            <div class="shadow-usage">Keyboard focus state for interactive elements</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-example">
+                    <h4>CSS Variables</h4>
+                    <pre><code class="language-css">:root {
+  --focus-outline: 0 0 0 2px var(--color-green-lime);
+}</code></pre>
+                </div>
+                
+                <div class="accessibility-note">
+                    <h5>Focus Accessibility</h5>
+                    <p>Focus indicators must be clearly visible and have sufficient contrast against the background. Never remove focus outlines without providing an alternative focus indicator.</p>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Shadow Usage Guidelines</h3>
+                <ul>
+                    <li>Use shadows consistently to indicate elevation and hierarchy</li>
+                    <li>Use small shadows for subtle elevation</li>
+                    <li>Use medium shadows for cards and containers</li>
+                    <li>Use large shadows for modals and popovers</li>
+                    <li>Use focus effects for keyboard navigation</li>
+                    <li>Avoid using shadows excessively to prevent visual clutter</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="borders">
+            <h2 class="section-title">Border Styles and Radii</h2>
+            <p>HomeSwift uses consistent border styles and radii to create a cohesive visual language.</p>
+            
+            <div class="subsection">
+                <h3>Border Radii</h3>
+                <p>Border radii are used to create rounded corners on UI elements. HomeSwift uses three border radius sizes for different purposes.</p>
+                
+                <div class="border-showcase">
+                    <div class="border-item">
+                        <div class="border-example" style="border-radius: 4px;"></div>
+                        <div class="border-info">
+                            <div class="border-name">Small Radius</div>
+                            <div class="border-value">4px</div>
+                            <div class="border-usage">Buttons, form elements, small components</div>
+                        </div>
+                    </div>
+                    <div class="border-item">
+                        <div class="border-example" style="border-radius: 8px;"></div>
+                        <div class="border-info">
+                            <div class="border-name">Medium Radius</div>
+                            <div class="border-value">8px</div>
+                            <div class="border-usage">Cards, containers, modals</div>
+                        </div>
+                    </div>
+                    <div class="border-item">
+                        <div class="border-example" style="border-radius: 10px;"></div>
+                        <div class="border-info">
+                            <div class="border-name">Large Radius</div>
+                            <div class="border-value">10px</div>
+                            <div class="border-usage">Featured elements, promotional content</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-example">
+                    <h4>CSS Variables</h4>
+                    <pre><code class="language-css">:root {
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 10px;
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Border Styles</h3>
+                <p>Border styles are used to create boundaries between elements and to indicate states.</p>
+                
+                <div class="border-showcase">
+                    <div class="border-item">
+                        <div class="border-example" style="border: 1px solid #808080;"></div>
+                        <div class="border-info">
+                            <div class="border-name">Standard Border</div>
+                            <div class="border-value">1px solid #808080</div>
+                            <div class="border-usage">Form elements, dividers, subtle boundaries</div>
+                        </div>
+                    </div>
+                    <div class="border-item">
+                        <div class="border-example" style="border: 2px solid #00305C;"></div>
+                        <div class="border-info">
+                            <div class="border-name">Emphasis Border</div>
+                            <div class="border-value">2px solid #00305C</div>
+                            <div class="border-usage">Secondary buttons, selected states</div>
+                        </div>
+                    </div>
+                    <div class="border-item">
+                        <div class="border-example" style="border: 2px solid #37C640;"></div>
+                        <div class="border-info">
+                            <div class="border-name">Focus Border</div>
+                            <div class="border-value">2px solid #37C640</div>
+                            <div class="border-usage">Focus states, active elements</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-example">
+                    <h4>CSS Variables</h4>
+                    <pre><code class="language-css">:root {
+  --border-width-standard: 1px;
+  --border-width-emphasis: 2px;
+  
+  --border-standard: var(--border-width-standard) solid var(--color-gray);
+  --border-emphasis: var(--border-width-emphasis) solid var(--color-midnight-blue);
+  --border-focus: var(--border-width-emphasis) solid var(--color-green-lime);
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Border Usage Guidelines</h3>
+                <ul>
+                    <li>Use border radii consistently across similar elements</li>
+                    <li>Use small radius for form elements and buttons</li>
+                    <li>Use medium radius for cards and containers</li>
+                    <li>Use large radius for featured elements</li>
+                    <li>Use standard borders for subtle boundaries</li>
+                    <li>Use emphasis borders for secondary buttons and selected states</li>
+                    <li>Use focus borders for keyboard navigation</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 HomeSwift. All rights reserved.</p>
+            <p>This design system is confidential and proprietary to HomeSwift.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

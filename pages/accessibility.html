@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSwift Design System - Accessibility</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M40 0L0 20V60L40 80L80 60V20L40 0Z" fill="#39005C"/>
+                    <path d="M30 20L10 30V50L30 60L50 50V30L30 20Z" fill="white"/>
+                    <path d="M50 20L30 30V50L50 60L70 50V30L50 20Z" fill="white"/>
+                </svg>
+                <span class="visually-hidden">HomeSwift</span>
+            </div>
+            <h1>HomeSwift Design System</h1>
+            <p class="header-description">Accessibility Guidelines</p>
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Main Navigation">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="../index.html">Introduction</a></li>
+                <li><a href="design-tokens.html">Design Tokens</a></li>
+                <li><a href="components.html">Components</a></li>
+                <li><a href="patterns.html">Patterns</a></li>
+                <li><a href="accessibility.html" class="active">Accessibility</a></li>
+                <li><a href="platform-guidelines.html">Platform Guidelines</a></li>
+                <li><a href="implementation.html">Implementation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" id="main-content">
+        <section class="section" id="accessibility-overview">
+            <h2 class="section-title">Accessibility</h2>
+            <p>HomeSwift is committed to creating accessible experiences for all users, regardless of abilities. This section provides guidelines for ensuring that all HomeSwift interfaces are accessible and inclusive.</p>
+            
+            <div class="subsection">
+                <h3>Accessibility Principles</h3>
+                <p>HomeSwift follows the Web Content Accessibility Guidelines (WCAG) 2.1 at the AA level. These guidelines are organized around four principles:</p>
+                
+                <ul>
+                    <li><strong>Perceivable:</strong> Information and user interface components must be presentable to users in ways they can perceive.</li>
+                    <li><strong>Operable:</strong> User interface components and navigation must be operable.</li>
+                    <li><strong>Understandable:</strong> Information and the operation of the user interface must be understandable.</li>
+                    <li><strong>Robust:</strong> Content must be robust enough that it can be interpreted by a wide variety of user agents, including assistive technologies.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="color-contrast">
+            <h2 class="section-title">Color Contrast</h2>
+            <p>Sufficient color contrast ensures that text and interactive elements are perceivable by users with low vision or color vision deficiencies.</p>
+            
+            <div class="subsection">
+                <h3>Guidelines</h3>
+                <ul>
+                    <li>Maintain a minimum contrast ratio of 4.5:1 for all text elements</li>
+                    <li>Use higher contrast ratios (7:1) for critical information</li>
+                    <li>Avoid using color alone to convey information</li>
+                    <li>Provide alternative visual cues alongside color coding</li>
+                </ul>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Color Contrast Examples</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="background-color: #FFFFFF; color: #00305C; padding: 16px; border-radius: 8px;">
+                                    <p><strong>Good Contrast (10.7:1)</strong></p>
+                                    <p>Midnight Blue (#00305C) on White (#FFFFFF)</p>
+                                </div>
+                            </div>
+                            <div class="component-variant">
+                                <div style="background-color: #FFFFFF; color: #808080; padding: 16px; border-radius: 8px;">
+                                    <p><strong>Acceptable Contrast (4.6:1)</strong></p>
+                                    <p>Gray (#808080) on White (#FFFFFF)</p>
+                                </div>
+                            </div>
+                            <div class="component-variant">
+                                <div style="background-color: #FFFFFF; color: #37C640; padding: 16px; border-radius: 8px;">
+                                    <p><strong>Poor Contrast (2.5:1)</strong></p>
+                                    <p>Green Lime (#37C640) on White (#FFFFFF)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Color + Alternative Cues</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="display: inline-block; width: 16px; height: 16px; background-color: #37C640; border-radius: 50%;"></span>
+                                    <span>Available</span>
+                                </div>
+                            </div>
+                            <div class="component-variant">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="display: inline-block; width: 16px; height: 16px; background-color: #FFCC00; border-radius: 50%;"></span>
+                                    <span>Limited Availability</span>
+                                </div>
+                            </div>
+                            <div class="component-variant">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="display: inline-block; width: 16px; height: 16px; background-color: #FF3B30; border-radius: 50%;"></span>
+                                    <span>Unavailable</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Design Specifications</h3>
+                <ul>
+                    <li><strong>Primary text:</strong> Midnight Blue (#00305C) on White (#FFFFFF) - 10.7:1</li>
+                    <li><strong>Secondary text:</strong> Gray (#808080) on White (#FFFFFF) - 4.6:1</li>
+                    <li><strong>Accent text:</strong> Green Lime (#37C640) on White (#FFFFFF) - 2.5:1 (use only for large text or UI elements)</li>
+                    <li><strong>Error text:</strong> Red (#FF0000) on White (#FFFFFF) - 4:1</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Technical Requirements</h3>
+                <ul>
+                    <li>Implement automated contrast checking in design tools</li>
+                    <li>Provide alternative text for color-coded elements</li>
+                    <li>Test with various display settings (grayscale, high contrast)</li>
+                    <li>Consider runtime contrast adjustment capabilities for user preferences</li>
+                </ul>
+                
+                <div class="code-example">
+                    <h4>Contrast Checking Tool</h4>
+                    <pre><code class="language-javascript">function calculateContrastRatio(foreground, background) {
+  // Convert hex to RGB
+  const fgRGB = hexToRgb(foreground);
+  const bgRGB = hexToRgb(background);
+  
+  // Calculate luminance
+  const fgLuminance = calculateLuminance(fgRGB);
+  const bgLuminance = calculateLuminance(bgRGB);
+  
+  // Calculate contrast ratio
+  const ratio = (Math.max(fgLuminance, bgLuminance) + 0.05) / 
+                (Math.min(fgLuminance, bgLuminance) + 0.05);
+  
+  return ratio.toFixed(1);
+}
+
+// Usage
+const ratio = calculateContrastRatio('#00305C', '#FFFFFF');
+console.log(`Contrast ratio: ${ratio}:1`);
+// Output: "Contrast ratio: 10.7:1"</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="text-readability">
+            <h2 class="section-title">Text Readability</h2>
+            <p>Readable text ensures that content is accessible to all users, including those with visual impairments or reading disabilities.</p>
+            
+            <div class="subsection">
+                <h3>Guidelines</h3>
+                <ul>
+                    <li>Use Poppins font throughout the application</li>
+                    <li>Maintain minimum font sizes:
+                        <ul>
+                            <li>Body text: 16px</li>
+                            <li>Captions: 14px</li>
+                            <li>Headings: 24px+</li>
+                        </ul>
+                    </li>
+                    <li>Use appropriate line spacing (1.5x font size)</li>
+                    <li>Limit line length to 80 characters for optimal readability</li>
+                </ul>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Text Readability Examples</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <div style="max-width: 600px; padding: 16px; border-radius: 8px; background-color: #F5F5F5;">
+                                    <p style="font-size: 16px; line-height: 1.5; margin-bottom: 16px;">This is body text at 16px with 1.5x line height. It provides optimal readability for most users and ensures that text is legible on all devices. The line length is limited to improve readability.</p>
+                                    <p style="font-size: 14px; line-height: 1.4; margin-bottom: 8px;">This is caption text at 14px with 1.4x line height. It's used for secondary information and should be limited in length.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Design Specifications</h3>
+                <ul>
+                    <li><strong>Font:</strong> Poppins throughout</li>
+                    <li><strong>Weight:</strong> Regular (400) for body, Medium (500) for headings</li>
+                    <li><strong>Letter spacing:</strong> 0.5px for body text</li>
+                    <li><strong>Line height:</strong> 24px for 16px body text</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Technical Requirements</h3>
+                <ul>
+                    <li>Implement text scaling support</li>
+                    <li>Support dynamic type implementation</li>
+                    <li>Consider localization requirements for text expansion</li>
+                    <li>Test readability across different languages</li>
+                </ul>
+                
+                <div class="code-example">
+                    <h4>Responsive Typography</h4>
+                    <pre><code class="language-css">html {
+  font-size: 100%; /* 16px by default */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  color: var(--color-midnight-blue);
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%; /* 14px base size for smaller screens */
+  }
+}
+
+/* Using relative units for scalability */
+h1 {
+  font-size: 2.25rem; /* 36px at default size */
+  line-height: 1.2;
+}
+
+p {
+  font-size: 1rem; /* 16px at default size */
+  line-height: 1.5;
+  max-width: 80ch; /* Limit line length to 80 characters */
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="navigation-accessibility">
+            <h2 class="section-title">Navigation Accessibility</h2>
+            <p>Accessible navigation ensures that all users can navigate the application efficiently regardless of abilities.</p>
+            
+            <div class="subsection">
+                <h3>Guidelines</h3>
+                <ul>
+                    <li>Implement logical tab order for keyboard navigation</li>
+                    <li>Provide visible focus indicators for all interactive elements</li>
+                    <li>Include skip navigation links for screen reader users</li>
+                    <li>Ensure touch targets are at least 44x44px for mobile interfaces</li>
+                    <li>Provide multiple navigation methods (search, menus, links)</li>
+                </ul>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Focus Indicators</h4>
+                        <div class="component-variants">
+                            <div class="component-variant">
+                                <button class="btn btn-primary btn-focus">Focused Button</button>
+                            </div>
+                            <div class="component-variant">
+                                <div class="input-container">
+                                    <label for="focus-example">Focused Input</label>
+                                    <input type="text" id="focus-example" class="input-field input-focus" value="Focus Example">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Design Specifications</h3>
+                <ul>
+                    <li><strong>Focus state:</strong> 2px Green Lime (#37C640) outline with 2px offset</li>
+                    <li><strong>Touch targets:</strong> Minimum 44x44px with adequate spacing</li>
+                    <li><strong>Skip links:</strong> Visually hidden until focused, then appearing at top of viewport</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Technical Requirements</h3>
+                <ul>
+                    <li>Implement keyboard navigation testing</li>
+                    <li>Ensure proper focus management</li>
+                    <li>Verify touch target sizes</li>
+                    <li>Test with screen readers for navigation accessibility</li>
+                </ul>
+                
+                <div class="code-example">
+                    <h4>Skip Navigation Link</h4>
+                    <pre><code class="language-html">&lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;
+
+&lt;header&gt;
+  &lt;!-- Header content --&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+  &lt;!-- Navigation content --&gt;
+&lt;/nav&gt;
+
+&lt;main id="main-content"&gt;
+  &lt;!-- Main content --&gt;
+&lt;/main&gt;</code></pre>
+                    
+                    <h4>Skip Link CSS</h4>
+                    <pre><code class="language-css">.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-plum-purple);
+  color: var(--color-white);
+  padding: var(--spacing-3);
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="screen-reader-support">
+            <h2 class="section-title">Screen Reader Support</h2>
+            <p>Screen reader support ensures that content is accessible to users who rely on screen readers and other assistive technologies.</p>
+            
+            <div class="subsection">
+                <h3>Guidelines</h3>
+                <ul>
+                    <li>Use semantic HTML elements appropriately</li>
+                    <li>Provide descriptive alt text for all images</li>
+                    <li>Implement ARIA labels and landmarks where needed</li>
+                    <li>Ensure form elements have associated labels</li>
+                    <li>Announce dynamic content changes</li>
+                </ul>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Semantic HTML Example</h4>
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;!-- Good: Using semantic HTML --&gt;
+&lt;article&gt;
+  &lt;h2&gt;Service Details&lt;/h2&gt;
+  &lt;p&gt;This service includes professional cleaning of all rooms.&lt;/p&gt;
+  &lt;figure&gt;
+    &lt;img src="cleaning.jpg" alt="Professional cleaner wiping kitchen counter" width="300" height="200"&gt;
+    &lt;figcaption&gt;Our professional cleaning service&lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/article&gt;
+
+&lt;!-- Bad: Using non-semantic HTML --&gt;
+&lt;div&gt;
+  &lt;div&gt;Service Details&lt;/div&gt;
+  &lt;div&gt;This service includes professional cleaning of all rooms.&lt;/div&gt;
+  &lt;div&gt;
+    &lt;img src="cleaning.jpg" width="300" height="200"&gt;
+    &lt;div&gt;Our professional cleaning service&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Design Specifications</h3>
+                <ul>
+                    <li><strong>Alt text guidelines:</strong> Concise, descriptive, under 125 characters</li>
+                    <li><strong>ARIA landmark roles:</strong> banner, navigation, main, complementary, contentinfo</li>
+                    <li><strong>Form labels:</strong> Visible, associated with inputs, descriptive</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Technical Requirements</h3>
+                <ul>
+                    <li>Test with screen readers across platforms</li>
+                    <li>Verify ARIA implementation</li>
+                    <li>Test dynamic content announcements</li>
+                    <li>Validate form accessibility</li>
+                </ul>
+                
+                <div class="code-example">
+                    <h4>ARIA Landmarks</h4>
+                    <pre><code class="language-html">&lt;header role="banner"&gt;
+  &lt;!-- Site header content --&gt;
+&lt;/header&gt;
+
+&lt;nav role="navigation" aria-label="Main Navigation"&gt;
+  &lt;!-- Navigation content --&gt;
+&lt;/nav&gt;
+
+&lt;main role="main" id="main-content"&gt;
+  &lt;!-- Main content --&gt;
+&lt;/main&gt;
+
+&lt;aside role="complementary" aria-label="Related Information"&gt;
+  &lt;!-- Sidebar content --&gt;
+&lt;/aside&gt;
+
+&lt;footer role="contentinfo"&gt;
+  &lt;!-- Footer content --&gt;
+&lt;/footer&gt;</code></pre>
+                    
+                    <h4>Dynamic Content Announcements</h4>
+                    <pre><code class="language-html">&lt;div aria-live="polite" class="visually-hidden"&gt;
+  &lt;!-- Content will be announced when changed --&gt;
+&lt;/div&gt;</code></pre>
+                    
+                    <h4>JavaScript for Announcements</h4>
+                    <pre><code class="language-javascript">function announceToScreenReader(message) {
+  const announcer = document.querySelector('[aria-live="polite"]');
+  announcer.textContent = message;
+  
+  // Clear after a delay to allow for multiple announcements
+  setTimeout(() => {
+    announcer.textContent = '';
+  }, 3000);
+}
+
+// Usage
+announceToScreenReader('Your booking has been confirmed.');</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="accessibility-testing">
+            <h2 class="section-title">Accessibility Testing</h2>
+            <p>Regular accessibility testing ensures that HomeSwift interfaces remain accessible as they evolve.</p>
+            
+            <div class="subsection">
+                <h3>Testing Checklist</h3>
+                <ul>
+                    <li><strong>Automated Testing:</strong>
+                        <ul>
+                            <li>Use tools like Axe, WAVE, or Lighthouse</li>
+                            <li>Integrate accessibility testing into CI/CD pipeline</li>
+                            <li>Run automated tests on all major pages and components</li>
+                        </ul>
+                    </li>
+                    <li><strong>Manual Testing:</strong>
+                        <ul>
+                            <li>Test keyboard navigation</li>
+                            <li>Test with screen readers (NVDA, VoiceOver, JAWS)</li>
+                            <li>Test with browser zoom (up to 200%)</li>
+                            <li>Test with high contrast mode</li>
+                            <li>Test with reduced motion settings</li>
+                        </ul>
+                    </li>
+                    <li><strong>User Testing:</strong>
+                        <ul>
+                            <li>Include users with disabilities in user testing</li>
+                            <li>Test with assistive technology users</li>
+                            <li>Gather feedback on accessibility issues</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Testing Tools</h3>
+                <ul>
+                    <li><strong>Automated Tools:</strong> Axe, WAVE, Lighthouse, Pa11y</li>
+                    <li><strong>Screen Readers:</strong> NVDA (Windows), VoiceOver (macOS/iOS), TalkBack (Android)</li>
+                    <li><strong>Contrast Checkers:</strong> WebAIM Contrast Checker, Colour Contrast Analyser</li>
+                    <li><strong>Keyboard Testing:</strong> Manual keyboard navigation, Keyboard Navigation Viewer</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Testing Process</h3>
+                <ol>
+                    <li>Run automated tests to identify basic issues</li>
+                    <li>Conduct manual testing to identify more complex issues</li>
+                    <li>Prioritize issues based on impact and frequency</li>
+                    <li>Fix issues and retest</li>
+                    <li>Document accessibility features and limitations</li>
+                    <li>Conduct regular accessibility audits</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 HomeSwift. All rights reserved.</p>
+            <p>This design system is confidential and proprietary to HomeSwift.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

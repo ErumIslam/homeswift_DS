@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSwift Design System - Implementation</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M40 0L0 20V60L40 80L80 60V20L40 0Z" fill="#39005C"/>
+                    <path d="M30 20L10 30V50L30 60L50 50V30L30 20Z" fill="white"/>
+                    <path d="M50 20L30 30V50L50 60L70 50V30L50 20Z" fill="white"/>
+                </svg>
+                <span class="visually-hidden">HomeSwift</span>
+            </div>
+            <h1>HomeSwift Design System</h1>
+            <p class="header-description">Implementation Guidelines</p>
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Main Navigation">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="../index.html">Introduction</a></li>
+                <li><a href="design-tokens.html">Design Tokens</a></li>
+                <li><a href="components.html">Components</a></li>
+                <li><a href="patterns.html">Patterns</a></li>
+                <li><a href="accessibility.html">Accessibility</a></li>
+                <li><a href="platform-guidelines.html">Platform Guidelines</a></li>
+                <li><a href="implementation.html" class="active">Implementation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" id="main-content">
+        <section class="section" id="implementation-overview">
+            <h2 class="section-title">Implementation Guidelines</h2>
+            <p>This section provides guidelines for implementing the HomeSwift design system across different platforms and technologies. These guidelines ensure consistency and efficiency in the development process.</p>
+            
+            <div class="subsection">
+                <h3>Implementation Principles</h3>
+                <p>The implementation of the HomeSwift design system is guided by these core principles:</p>
+                
+                <ul>
+                    <li><strong>Consistency:</strong> Ensure consistent implementation across all platforms and technologies.</li>
+                    <li><strong>Efficiency:</strong> Optimize implementation for performance and development speed.</li>
+                    <li><strong>Maintainability:</strong> Create maintainable code that can evolve with the design system.</li>
+                    <li><strong>Accessibility:</strong> Ensure all implementations meet WCAG 2.1 AA standards.</li>
+                    <li><strong>Scalability:</strong> Design implementations to scale with the growth of the platform.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="figma-implementation">
+            <h2 class="section-title">Figma Implementation</h2>
+            <p>The HomeSwift design system is implemented in Figma as the primary design tool. This section provides guidelines for working with the Figma implementation.</p>
+            
+            <div class="subsection">
+                <h3>Figma File Structure</h3>
+                <p>The HomeSwift design system is organized into the following Figma pages:</p>
+                
+                <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>Introduction:</strong> Overview and documentation of the design system</li>
+                        <li><strong>Design Tokens:</strong> Colors, typography, spacing, shadows, and border styles</li>
+                        <li><strong>Components:</strong> UI components organized by type</li>
+                        <li><strong>Patterns:</strong> Common UI patterns and layouts</li>
+                        <li><strong>Templates:</strong> Page templates for common screens</li>
+                        <li><strong>Examples:</strong> Example screens showing the design system in use</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Component Structure</h3>
+                <p>Components in the Figma library are structured using a consistent approach:</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Component Organization</h4>
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <ul style="margin-bottom: 0;">
+                                <li><strong>Main Component:</strong> The base component with all variants</li>
+                                <li><strong>Variants:</strong> Different states and configurations of the component</li>
+                                <li><strong>Documentation:</strong> Usage guidelines and specifications</li>
+                                <li><strong>Examples:</strong> Examples of the component in context</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Component Naming Convention</h4>
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <p style="margin-bottom: 8px;"><strong>Format:</strong> [Category]/[Component]/[Variant]</p>
+                            <p style="margin-bottom: 0;"><strong>Examples:</strong></p>
+                            <ul style="margin-bottom: 0;">
+                                <li>Buttons/Primary/Default</li>
+                                <li>Buttons/Primary/Hover</li>
+                                <li>Cards/Service/Default</li>
+                                <li>Forms/Input/Default</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Auto Layout and Constraints</h3>
+                <p>HomeSwift components use Auto Layout and constraints to ensure responsive behavior:</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Auto Layout Guidelines</h4>
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <ul style="margin-bottom: 0;">
+                                <li>Use Auto Layout for all components</li>
+                                <li>Set appropriate padding and spacing using the spacing scale</li>
+                                <li>Use "Fill Container" for width when appropriate</li>
+                                <li>Use "Hug Contents" for height when appropriate</li>
+                                <li>Set appropriate alignment and distribution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Design Tokens in Figma</h3>
+                <p>Design tokens are implemented in Figma using styles and variables:</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Color Styles</h4>
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <p style="margin-bottom: 8px;"><strong>Format:</strong> [Category]/[Name]</p>
+                            <p style="margin-bottom: 0;"><strong>Examples:</strong></p>
+                            <ul style="margin-bottom: 0;">
+                                <li>Colors/Primary/Plum Purple</li>
+                                <li>Colors/Primary/Midnight Blue</li>
+                                <li>Colors/Status/Success</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Text Styles</h4>
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <p style="margin-bottom: 8px;"><strong>Format:</strong> [Category]/[Size]/[Weight]</p>
+                            <p style="margin-bottom: 0;"><strong>Examples:</strong></p>
+                            <ul style="margin-bottom: 0;">
+                                <li>Text/Heading 1/Bold</li>
+                                <li>Text/Body/Regular</li>
+                                <li>Text/Caption/Medium</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Effect Styles</h4>
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <p style="margin-bottom: 8px;"><strong>Format:</strong> [Category]/[Name]</p>
+                            <p style="margin-bottom: 0;"><strong>Examples:</strong></p>
+                            <ul style="margin-bottom: 0;">
+                                <li>Effects/Shadow/Small</li>
+                                <li>Effects/Shadow/Medium</li>
+                                <li>Effects/Shadow/Large</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="web-implementation">
+            <h2 class="section-title">Web Implementation</h2>
+            <p>The HomeSwift design system is implemented for web using HTML, CSS, and JavaScript. This section provides guidelines for web implementation.</p>
+            
+            <div class="subsection">
+                <h3>CSS Architecture</h3>
+                <p>The CSS architecture follows a component-based approach with CSS variables for design tokens:</p>
+                
+                <div class="code-example">
+                    <h4>CSS Variables</h4>
+                    <pre><code class="language-css">:root {
+  /* Color Variables */
+  --color-plum-purple: #39005C;
+  --color-midnight-blue: #00305C;
+  --color-white: #FFFFFF;
+  --color-green-lime: #37C640;
+  --color-gray: #808080;
+  
+  /* Spacing Variables */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  
+  /* Typography Variables */
+  --font-family-primary: 'Poppins', sans-serif;
+  --font-size-h1: 36px;
+  --font-size-h2: 30px;
+  --font-size-h3: 24px;
+  --font-size-h4: 20px;
+  --font-size-body: 16px;
+  --font-size-caption: 14px;
+  --font-size-small: 12px;
+  
+  /* Shadow Variables */
+  --shadow-small: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-large: 0px 4px 16px rgba(0, 0, 0, 0.15);
+  
+  /* Border Radius Variables */
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 10px;
+}</code></pre>
+                </div>
+                
+                <div class="code-example">
+                    <h4>Component CSS</h4>
+                    <pre><code class="language-css">/* Button Component */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-medium);
+  padding: var(--spacing-3) var(--spacing-6);
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  min-width: 120px;
+}
+
+.btn-primary {
+  background-color: var(--color-plum-purple);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: #4b0077;
+}
+
+.btn-primary:active {
+  background-color: #2d0046;
+}
+
+.btn-primary:focus {
+  outline: 2px solid var(--color-green-lime);
+  outline-offset: 2px;
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>HTML Structure</h3>
+                <p>HTML structure follows semantic markup principles with appropriate ARIA attributes:</p>
+                
+                <div class="code-example">
+                    <h4>Button HTML</h4>
+                    <pre><code class="language-html">&lt;button class="btn btn-primary" type="button"&gt;Primary Button&lt;/button&gt;
+
+&lt;button class="btn btn-primary" type="button" disabled&gt;Disabled Button&lt;/button&gt;
+
+&lt;button class="btn btn-primary" type="button" aria-busy="true"&gt;
+  &lt;span class="spinner"&gt;&lt;/span&gt;
+  Loading...
+&lt;/button&gt;</code></pre>
+                </div>
+                
+                <div class="code-example">
+                    <h4>Card HTML</h4>
+                    <pre><code class="language-html">&lt;div class="card service-card"&gt;
+  &lt;div class="service-card-icon" aria-hidden="true"&gt;🧹&lt;/div&gt;
+  &lt;h3 class="service-card-title"&gt;Cleaning&lt;/h3&gt;
+  &lt;p class="service-card-price"&gt;Starting at $25/hr&lt;/p&gt;
+  &lt;button class="btn btn-primary"&gt;View&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>JavaScript Behavior</h3>
+                <p>JavaScript is used for interactive components and follows these principles:</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>JavaScript Guidelines</h4>
+                        <div style="background-color: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <ul style="margin-bottom: 0;">
+                                <li>Use vanilla JavaScript for core components</li>
+                                <li>Implement progressive enhancement</li>
+                                <li>Ensure keyboard accessibility</li>
+                                <li>Use ARIA attributes for accessibility</li>
+                                <li>Optimize for performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-example">
+                    <h4>Dropdown Component JavaScript</h4>
+                    <pre><code class="language-javascript">class Dropdown {
+  constructor(element) {
+    this.dropdown = element;
+    this.button = element.querySelector('.dropdown-button');
+    this.menu = element.querySelector('.dropdown-menu');
+    this.items = element.querySelectorAll('.dropdown-item');
+    
+    this.isOpen = false;
+    
+    this.init();
+  }
+  
+  init() {
+    // Set initial ARIA attributes
+    this.button.setAttribute('aria-expanded', 'false');
+    this.button.setAttribute('aria-controls', this.menu.id);
+    
+    // Add event listeners
+    this.button.addEventListener('click', () => this.toggle());
+    this.button.addEventListener('keydown', (e) => this.handleButtonKeydown(e));
+    
+    this.items.forEach(item => {
+      item.addEventListener('click', () => this.selectItem(item));
+      item.addEventListener('keydown', (e) => this.handleItemKeydown(e, item));
+    });
+    
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!this.dropdown.contains(e.target)) {
+        this.close();
+      }
+    });
+  }
+  
+  toggle() {
+    if (this.isOpen) {
+      this.close();
+    } else {
+      this.open();
+    }
+  }
+  
+  open() {
+    this.menu.classList.add('show');
+    this.button.setAttribute('aria-expanded', 'true');
+    this.isOpen = true;
+    
+    // Focus first item
+    if (this.items.length > 0) {
+      this.items[0].focus();
+    }
+  }
+  
+  close() {
+    this.menu.classList.remove('show');
+    this.button.setAttribute('aria-expanded', 'false');
+    this.isOpen = false;
+  }
+  
+  selectItem(item) {
+    // Handle item selection
+    this.button.textContent = item.textContent;
+    this.close();
+    this.button.focus();
+  }
+  
+  handleButtonKeydown(e) {
+    switch (e.key) {
+      case 'ArrowDown':
+      case 'Down':
+        e.preventDefault();
+        this.open();
+        break;
+      case 'Escape':
+        e.preventDefault();
+        this.close();
+        break;
+    }
+  }
+  
+  handleItemKeydown(e, item) {
+    switch (e.key) {
+      case 'ArrowDown':
+      case 'Down':
+        e.preventDefault();
+        if (item.nextElementSibling) {
+          item.nextElementSibling.focus();
+        }
+        break;
+      case 'ArrowUp':
+      case 'Up':
+        e.preventDefault();
+        if (item.previousElementSibling) {
+          item.previousElementSibling.focus();
+        } else {
+          this.button.focus();
+        }
+        break;
+      case 'Escape':
+        e.preventDefault();
+        this.close();
+        this.button.focus();
+        break;
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        this.selectItem(item);
+        break;
+    }
+  }
+}
+
+// Initialize all dropdowns
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+  new Dropdown(dropdown);
+});</code></pre>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Responsive Design</h3>
+                <p>Responsive design ensures the interface works well across all screen sizes:</p>
+                
+                <div class="code-example">
+                    <h4>Responsive CSS</h4>
+                    <pre><code class="language-css">/* Base styles */
+.card {
+  width: 100%;
+  padding: var(--spacing-4);
+}
+
+/* Small devices (phones) */
+@media (max-width: 575.98px) {
+  .card {
+    padding: var(--spacing-3);
+  }
+}
+
+/* Medium devices and up */
+@media (min-width: 576px) {
+  .card {
+    width: calc(50% - var(--spacing-4));
+  }
+}
+
+/* Large devices and up */
+@media (min-width: 992px) {
+  .card {
+    width: calc(33.333% - var(--spacing-4));
+  }
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="mobile-implementation">
+            <h2 class="section-title">Mobile Implementation</h2>
+            <p>The HomeSwift design system is implemented for mobile platforms using native iOS and Android components. This section provides guidelines for mobile implementation.</p>
+            
+            <div class="subsection">
+                <h3>iOS Implementation</h3>
+                <p>iOS implementation uses Swift and UIKit/SwiftUI:</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>iOS Design Tokens</h4>
+                        <div class="code-example">
+                            <pre><code class="language-swift">// Colors.swift
+import UIKit
+
+extension UIColor {
+    struct HomeSwift {
+        static let plumPurple = UIColor(red: 57/255, green: 0/255, blue: 92/255, alpha: 1.0)
+        static let midnightBlue = UIColor(red: 0/255, green: 48/255, blue: 92/255, alpha: 1.0)
+        static let white = UIColor.white
+        static let greenLime = UIColor(red: 55/255, green: 198/255, blue: 64/255, alpha: 1.0)
+        static let gray = UIColor.systemGray
+        
+        struct Status {
+            static let success = UIColor(red: 55/255, green: 198/255, blue: 64/255, alpha: 1.0)
+            static let warning = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0)
+            static let error = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1.0)
+        }
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>iOS Button Component</h4>
+                        <div class="code-example">
+                            <pre><code class="language-swift">// HSButton.swift
+import UIKit
+
+class HSButton: UIButton {
+    enum Style {
+        case primary
+        case secondary
+        case disabled
+    }
+    
+    private var style: Style = .primary
+    
+    init(style: Style) {
+        super.init(frame: .zero)
+        self.style = style
+        setupButton()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupButton()
+    }
+    
+    private func setupButton() {
+        layer.cornerRadius = 8
+        titleLabel?.font = UIFont(name: "Poppins-SemiBold", size: 16)
+        
+        switch style {
+        case .primary:
+            backgroundColor = UIColor.HomeSwift.plumPurple
+            setTitleColor(UIColor.HomeSwift.white, for: .normal)
+        case .secondary:
+            backgroundColor = UIColor.clear
+            setTitleColor(UIColor.HomeSwift.midnightBlue, for: .normal)
+            layer.borderWidth = 2
+            layer.borderColor = UIColor.HomeSwift.midnightBlue.cgColor
+        case .disabled:
+            backgroundColor = UIColor.HomeSwift.gray
+            setTitleColor(UIColor.HomeSwift.white, for: .normal)
+            isEnabled = false
+            alpha = 0.7
+        }
+        
+        // Set content insets
+        contentEdgeInsets = UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
+    }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            if style == .primary {
+                backgroundColor = isHighlighted ? 
+                    UIColor.HomeSwift.plumPurple.darker(by: 20) : 
+                    UIColor.HomeSwift.plumPurple
+            } else if style == .secondary {
+                backgroundColor = isHighlighted ? 
+                    UIColor.HomeSwift.midnightBlue.withAlphaComponent(0.1) : 
+                    UIColor.clear
+            }
+        }
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Android Implementation</h3>
+                <p>Android implementation uses Kotlin and Jetpack Compose:</p>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Android Design Tokens</h4>
+                        <div class="code-example">
+                            <pre><code class="language-kotlin">// HomeSwiftTheme.kt
+import androidx.compose.ui.graphics.Color
+
+object HomeSwiftColors {
+    val PlumPurple = Color(0xFF39005C)
+    val MidnightBlue = Color(0xFF00305C)
+    val White = Color(0xFFFFFFFF)
+    val GreenLime = Color(0xFF37C640)
+    val Gray = Color(0xFF808080)
+    
+    object Status {
+        val Success = Color(0xFF37C640)
+        val Warning = Color(0xFFFFCC00)
+        val Error = Color(0xFFFF3B30)
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-showcase">
+                    <div class="component-group">
+                        <h4>Android Button Component</h4>
+                        <div class="code-example">
+                            <pre><code class="language-kotlin">// Button.kt
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+
+enum class ButtonStyle {
+    PRIMARY,
+    SECONDARY,
+    DISABLED
+}
+
+@Composable
+fun HomeSwiftButton(
+    text: String,
+    style: ButtonStyle = ButtonStyle.PRIMARY,
+    onClick: () -> Unit = {}
+) {
+    val colors = when (style) {
+        ButtonStyle.PRIMARY -> ButtonDefaults.buttonColors(
+            backgroundColor = HomeSwiftColors.PlumPurple,
+            contentColor = HomeSwiftColors.White
+        )
+        ButtonStyle.SECONDARY -> ButtonDefaults.buttonColors(
+            backgroundColor = HomeSwiftColors.White,
+            contentColor = HomeSwiftColors.MidnightBlue
+        )
+        ButtonStyle.DISABLED -> ButtonDefaults.buttonColors(
+            backgroundColor = HomeSwiftColors.Gray,
+            contentColor = HomeSwiftColors.White
+        )
+    }
+    
+    val isEnabled = style != ButtonStyle.DISABLED
+    
+    Button(
+        onClick = onClick,
+        enabled = isEnabled,
+        colors = colors,
+        contentPadding = PaddingValues(horizontal = 24.dp, vertical = 12.dp),
+        modifier = Modifier
+            .height(48.dp)
+            .width(120.dp)
+    ) {
+        Text(text = text)
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="implementation-best-practices">
+            <h2 class="section-title">Implementation Best Practices</h2>
+            <p>These best practices ensure efficient and consistent implementation of the HomeSwift design system:</p>
+            
+            <div class="subsection">
+                <h3>General Best Practices</h3>
+                <ul>
+                    <li>Use design tokens consistently across all platforms</li>
+                    <li>Implement components according to the specifications</li>
+                    <li>Ensure accessibility in all implementations</li>
+                    <li>Test implementations across different devices and screen sizes</li>
+                    <li>Document implementation details for future reference</li>
+                    <li>Maintain version control for all implementation files</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Performance Considerations</h3>
+                <ul>
+                    <li>Optimize asset sizes for web and mobile</li>
+                    <li>Minimize JavaScript bundle size</li>
+                    <li>Use efficient CSS selectors</li>
+                    <li>Implement lazy loading for components when appropriate</li>
+                    <li>Optimize animations for performance</li>
+                    <li>Test performance on low-end devices</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Accessibility Implementation</h3>
+                <ul>
+                    <li>Use semantic HTML elements</li>
+                    <li>Implement proper ARIA attributes</li>
+                    <li>Ensure keyboard navigation works correctly</li>
+                    <li>Test with screen readers</li>
+                    <li>Implement focus management</li>
+                    <li>Support text scaling</li>
+                </ul>
+            </div>
+            
+            <div class="accessibility-note">
+                <h5>Implementation Accessibility</h5>
+                <p>All implementations of the HomeSwift design system must meet WCAG 2.1 AA standards. This includes proper semantic structure, keyboard accessibility, screen reader support, and sufficient color contrast. Test all implementations with assistive technologies to ensure they are accessible to all users.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 HomeSwift. All rights reserved.</p>
+            <p>This design system is confidential and proprietary to HomeSwift.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

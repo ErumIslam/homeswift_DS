@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeSwift Design System - Components</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M40 0L0 20V60L40 80L80 60V20L40 0Z" fill="#39005C"/>
+                    <path d="M30 20L10 30V50L30 60L50 50V30L30 20Z" fill="white"/>
+                    <path d="M50 20L30 30V50L50 60L70 50V30L50 20Z" fill="white"/>
+                </svg>
+                <span class="visually-hidden">HomeSwift</span>
+            </div>
+            <h1>HomeSwift Design System</h1>
+            <p class="header-description">Components Library</p>
+        </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Main Navigation">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="../index.html">Introduction</a></li>
+                <li><a href="design-tokens.html">Design Tokens</a></li>
+                <li><a href="components.html" class="active">Components</a></li>
+                <li><a href="patterns.html">Patterns</a></li>
+                <li><a href="accessibility.html">Accessibility</a></li>
+                <li><a href="platform-guidelines.html">Platform Guidelines</a></li>
+                <li><a href="implementation.html">Implementation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" id="main-content">
+        <section class="section" id="components-overview">
+            <h2 class="section-title">Components</h2>
+            <p>Components are the building blocks of the HomeSwift interface. They are reusable UI elements that can be combined to create consistent user experiences across all platforms.</p>
+            
+            <div class="subsection">
+                <h3>Component Principles</h3>
+                <ul>
+                    <li><strong>Consistency:</strong> Components should look and behave consistently across all platforms.</li>
+                    <li><strong>Accessibility:</strong> Components should be accessible to all users, including those with disabilities.</li>
+                    <li><strong>Flexibility:</strong> Components should be adaptable to different contexts and use cases.</li>
+                    <li><strong>Efficiency:</strong> Components should be optimized for performance and ease of implementation.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="buttons">
+            <h2 class="section-title">Buttons</h2>
+            <p>Buttons are used to trigger actions or navigate to new pages. HomeSwift uses three button styles: primary, secondary, and disabled.</p>
+            
+            <div class="subsection">
+                <h3>Primary Buttons</h3>
+                <p>Primary buttons are used for the main action on a page or in a component. They have high visual prominence and should be used sparingly.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-variants">
+                        <div class="component-variant">
+                            <button class="btn btn-primary">Primary Button</button>
+                            <div class="variant-label">Default</div>
+                        </div>
+                        <div class="component-variant">
+                            <button class="btn btn-primary btn-hover">Primary Button</button>
+                            <div class="variant-label">Hover</div>
+                        </div>
+                        <div class="component-variant">
+                            <button class="btn btn-primary btn-pressed">Primary Button</button>
+                            <div class="variant-label">Pressed</div>
+                        </div>
+                        <div class="component-variant">
+                            <button class="btn btn-primary btn-focus">Primary Button</button>
+                            <div class="variant-label">Focus</div>
+                        </div>
+                    </div>
+                    
+                    <div class="component-specs">
+                        <h4>Specifications</h4>
+                        <p><strong>Background:</strong> Ripe Plum Purple (#39005C)</p>
+                        <p><strong>Text Color:</strong> White (#FFFFFF)</p>
+                        <p><strong>Border:</strong> None</p>
+                        <p><strong>Border Radius:</strong> 8px</p>
+                        <p><strong>Padding:</strong> 12px 24px</p>
+                        <p><strong>Font:</strong> Poppins, 16px, Semi-Bold (600)</p>
+                        <p><strong>Hover State:</strong> Darker purple (#4b0077)</p>
+                        <p><strong>Active State:</strong> Even darker purple (#2d0046)</p>
+                        <p><strong>Focus State:</strong> 2px Green Lime (#37C640) outline with 2px offset</p>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>HTML</h4>
+                        <pre><code class="language-html">&lt;button class="btn btn-primary"&gt;Primary Button&lt;/button&gt;</code></pre>
+                        
+                        <h4>CSS</h4>
+                        <pre><code class="language-css">.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-medium);
+  padding: var(--spacing-3) var(--spacing-6);
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  min-width: 120px;
+}
+
+.btn-primary {
+  background-color: var(--color-plum-purple);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: #4b0077;
+}
+
+.btn-primary:active {
+  background-color: #2d0046;
+}
+
+.btn-primary:focus {
+  outline: 2px solid var(--color-green-lime);
+  outline-offset: 2px;
+}</code></pre>
+                    </div>
+                    
+                    <div class="usage-guidelines">
+                        <h4>Usage Guidelines</h4>
+                        <ul>
+                            <li>Use for primary actions such as "Book Now", "Confirm Payment", or "Submit"</li>
+                            <li>Limit to one primary button per screen or section</li>
+                            <li>Position in a prominent location, typically at the bottom of forms or dialogs</li>
+                            <li>Use clear, action-oriented text (verb + noun when needed)</li>
+                            <li>Avoid using for destructive actions (use secondary buttons instead)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Secondary Buttons</h3>
+                <p>Secondary buttons are used for alternative actions or less important actions. They have medium visual prominence.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-variants">
+                        <div class="component-variant">
+                            <button class="btn btn-secondary">Secondary Button</button>
+                            <div class="variant-label">Default</div>
+                        </div>
+                        <div class="component-variant">
+                            <button class="btn btn-secondary btn-hover">Secondary Button</button>
+                            <div class="variant-label">Hover</div>
+                        </div>
+                        <div class="component-variant">
+                            <button class="btn btn-secondary btn-pressed">Secondary Button</button>
+                            <div class="variant-label">Pressed</div>
+                        </div>
+                        <div class="component-variant">
+                            <button class="btn btn-secondary btn-focus">Secondary Button</button>
+                            <div class="variant-label">Focus</div>
+                        </div>
+                    </div>
+                    
+                    <div class="component-specs">
+                        <h4>Specifications</h4>
+                        <p><strong>Background:</strong> Transparent</p>
+                        <p><strong>Text Color:</strong> Midnight Blue (#00305C)</p>
+                        <p><strong>Border:</strong> 1px solid Midnight Blue (#00305C)</p>
+                        <p><strong>Border Radius:</strong> 8px</p>
+                        <p><strong>Padding:</strong> 12px 24px</p>
+                        <p><strong>Font:</strong> Poppins, 16px, Semi-Bold (600)</p>
+                        <p><strong>Hover State:</strong> Light blue background (rgba(0, 48, 92, 0.05))</p>
+                        <p><strong>Active State:</strong> Slightly darker blue background (rgba(0, 48, 92, 0.1))</p>
+                        <p><strong>Focus State:</strong> 2px Green Lime (#37C640) outline with 2px offset</p>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>HTML</h4>
+                        <pre><code class="language-html">&lt;button class="btn btn-secondary"&gt;Secondary Button&lt;/button&gt;</code></pre>
+                        
+                        <h4>CSS</h4>
+                        <pre><code class="language-css">.btn-secondary {
+  background-color: transparent;
+  color: var(--color-midnight-blue);
+  border: 2px solid var(--color-midnight-blue);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 48, 92, 0.05);
+}
+
+.btn-secondary:active {
+  background-color: rgba(0, 48, 92, 0.1);
+}
+
+.btn-secondary:focus {
+  outline: 2px solid var(--color-green-lime);
+  outline-offset: 2px;
+}</code></pre>
+                    </div>
+                    
+                    <div class="usage-guidelines">
+                        <h4>Usage Guidelines</h4>
+                        <ul>
+                            <li>Use for secondary actions such as "Cancel", "Back", or "View Details"</li>
+                            <li>Can be used alongside primary buttons to provide alternative actions</li>
+                            <li>Can be used for destructive actions when paired with appropriate warning text</li>
+                            <li>Use clear, descriptive text</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Disabled Buttons</h3>
+                <p>Disabled buttons indicate that an action is not currently available. They have low visual prominence and cannot be interacted with.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-variants">
+                        <div class="component-variant">
+                            <button class="btn btn-disabled" disabled>Disabled Button</button>
+                            <div class="variant-label">Default</div>
+                        </div>
+                    </div>
+                    
+                    <div class="component-specs">
+                        <h4>Specifications</h4>
+                        <p><strong>Background:</strong> Gray (#808080)</p>
+                        <p><strong>Text Color:</strong> White (#FFFFFF)</p>
+                        <p><strong>Border:</strong> None</p>
+                        <p><strong>Border Radius:</strong> 8px</p>
+                        <p><strong>Padding:</strong> 12px 24px</p>
+                        <p><strong>Font:</strong> Poppins, 16px, Semi-Bold (600)</p>
+                        <p><strong>Opacity:</strong> 70%</p>
+                        <p><strong>Cursor:</strong> not-allowed</p>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>HTML</h4>
+                        <pre><code class="language-html">&lt;button class="btn btn-disabled" disabled&gt;Disabled Button&lt;/button&gt;</code></pre>
+                        
+                        <h4>CSS</h4>
+                        <pre><code class="language-css">.btn-disabled {
+  background-color: var(--color-gray);
+  color: var(--color-white);
+  cursor: not-allowed;
+  opacity: 0.7;
+}</code></pre>
+                    </div>
+                    
+                    <div class="usage-guidelines">
+                        <h4>Usage Guidelines</h4>
+                        <ul>
+                            <li>Use to indicate that an action is not currently available</li>
+                            <li>Always provide a clear reason why the button is disabled, either through helper text or contextual information</li>
+                            <li>Consider using tooltips to explain why a button is disabled</li>
+                            <li>Avoid using disabled buttons when possible; consider alternative patterns such as inline validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accessibility-note">
+                <h5>Button Accessibility</h5>
+                <ul>
+                    <li>All buttons must have a visible focus state</li>
+                    <li>Button text should have a minimum contrast ratio of 4.5:1 against the background</li>
+                    <li>Button text should be descriptive and action-oriented</li>
+                    <li>Avoid using color alone to convey information</li>
+                    <li>Ensure buttons are keyboard accessible</li>
+                    <li>Minimum touch target size of 44x44px for mobile interfaces</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="cards">
+            <h2 class="section-title">Cards</h2>
+            <p>Cards are used to group related information and actions. HomeSwift uses three card styles: service cards, provider cards, and booking cards.</p>
+            
+            <div class="subsection">
+                <h3>Service Cards</h3>
+                <p>Service cards display service categories and options. They provide a quick overview of available services.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-variants">
+                        <div class="component-variant">
+                            <div class="card service-card">
+                                <div class="service-card-icon">🧹</div>
+                                <h3 class="service-card-title">Cleaning</h3>
+                                <p class="service-card-price">Starting at $25/hr</p>
+                                <button class="btn btn-primary">View</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="component-specs">
+                        <h4>Specifications</h4>
+                        <p><strong>Background:</strong> White (#FFFFFF)</p>
+                        <p><strong>Shadow:</strong> 0px 2px 8px rgba(0, 0, 0, 0.1)</p>
+                        <p><strong>Border Radius:</strong> 10px</p>
+                        <p><strong>Padding:</strong> 16px</p>
+                        <p><strong>Width:</strong> 200px (responsive)</p>
+                        <p><strong>Icon:</strong> Emoji or SVG icon, 36px</p>
+                        <p><strong>Title:</strong> Poppins, 18px, Semi-Bold (600)</p>
+                        <p><strong>Price:</strong> Poppins, 14px, Regular (400), Gray (#808080)</p>
+                        <p><strong>Button:</strong> Primary button, smaller size</p>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>HTML</h4>
+                        <pre><code class="language-html">&lt;div class="card service-card"&gt;
+  &lt;div class="service-card-icon"&gt;🧹&lt;/div&gt;
+  &lt;h3 class="service-card-title"&gt;Cleaning&lt;/h3&gt;
+  &lt;p class="service-card-price"&gt;Starting at $25/hr&lt;/p&gt;
+  &lt;button class="btn btn-primary"&gt;View&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                    
+                    <div class="usage-guidelines">
+                        <h4>Usage Guidelines</h4>
+                        <ul>
+                            <li>Use to display service categories on the home screen or service browsing pages</li>
+                            <li>Keep content concise and focused on the service name and starting price</li>
+                            <li>Use consistent icons across all service cards</li>
+                            <li>Ensure the "View" button leads to a detailed service page</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Provider Cards</h3>
+                <p>Provider cards display information about service providers. They help users compare and select providers.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-variants">
+                        <div class="component-variant">
+                            <div class="card provider-card">
+                                <div class="provider-card-image"></div>
+                                <div class="provider-card-content">
+                                    <div class="provider-header">
+                                        <h3 class="provider-name">Provider Name</h3>
+                                        <div class="provider-rating">★ 4.8</div>
+                                    </div>
+                                    <p class="provider-price">$45/hr</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="component-specs">
+                        <h4>Specifications</h4>
+                        <p><strong>Background:</strong> White (#FFFFFF)</p>
+                        <p><strong>Shadow:</strong> 0px 2px 8px rgba(0, 0, 0, 0.1)</p>
+                        <p><strong>Border Radius:</strong> 10px</p>
+                        <p><strong>Width:</strong> 300px (responsive)</p>
+                        <p><strong>Image:</strong> 300px x 150px, object-fit: cover</p>
+                        <p><strong>Content Padding:</strong> 16px</p>
+                        <p><strong>Provider Name:</strong> Poppins, 18px, Semi-Bold (600)</p>
+                        <p><strong>Rating:</strong> Poppins, 16px, Semi-Bold (600), Yellow (#FFCC00)</p>
+                        <p><strong>Price:</strong> Poppins, 14px, Regular (400), Gray (#808080)</p>
+                        <p><strong>Button:</strong> Primary button, full width</p>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>HTML</h4>
+                        <pre><code class="language-html">&lt;div class="card provider-card"&gt;
+  &lt;div class="provider-card-image"&gt;&lt;/div&gt;
+  &lt;div class="provider-card-content"&gt;
+    &lt;div class="provider-header"&gt;
+      &lt;h3 class="provider-name"&gt;Provider Name&lt;/h3&gt;
+      &lt;div class="provider-rating"&gt;★ 4.8&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p class="provider-price"&gt;$45/hr&lt;/p&gt;
+    &lt;button class="btn btn-primary"&gt;Book Now&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                    
+                    <div class="usage-guidelines">
+                        <h4>Usage Guidelines</h4>
+                        <ul>
+                            <li>Use to display provider listings on service detail pages</li>
+                            <li>Include high-quality provider profile photos when available</li>
+                            <li>Always display the provider's rating prominently</li>
+                            <li>Ensure the "Book Now" button leads to the booking flow</li>
+                            <li>Consider adding additional information such as availability or specialties when relevant</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Booking Cards</h3>
+                <p>Booking cards display information about user bookings. They help users track and manage their bookings.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-variants">
+                        <div class="component-variant">
+                            <div class="card booking-card">
+                                <div class="booking-header">
+                                    <h3 class="booking-service">Cleaning Service</h3>
+                                    <span class="status-tag status-confirmed">Confirmed</span>
+                                </div>
+                                <div class="booking-details">
+                                    <p><strong>Provider:</strong> Provider Name</p>
+                                    <p><strong>Date & Time:</strong> May 25, 2025 at 10:00 AM</p>
+                                </div>
+                                <div class="booking-actions">
+                                    <button class="btn btn-secondary">Reschedule</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="component-specs">
+                        <h4>Specifications</h4>
+                        <p><strong>Background:</strong> White (#FFFFFF)</p>
+                        <p><strong>Shadow:</strong> 0px 2px 8px rgba(0, 0, 0, 0.1)</p>
+                        <p><strong>Border Radius:</strong> 10px</p>
+                        <p><strong>Padding:</strong> 16px</p>
+                        <p><strong>Width:</strong> 300px (responsive)</p>
+                        <p><strong>Service Name:</strong> Poppins, 18px, Semi-Bold (600)</p>
+                        <p><strong>Status Tag:</strong> Pill-shaped, color based on status</p>
+                        <p><strong>Details:</strong> Poppins, 14px, Regular (400)</p>
+                        <p><strong>Actions:</strong> Secondary buttons, right-aligned</p>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>HTML</h4>
+                        <pre><code class="language-html">&lt;div class="card booking-card"&gt;
+  &lt;div class="booking-header"&gt;
+    &lt;h3 class="booking-service"&gt;Cleaning Service&lt;/h3&gt;
+    &lt;span class="status-tag status-confirmed"&gt;Confirmed&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="booking-details"&gt;
+    &lt;p&gt;&lt;strong&gt;Provider:&lt;/strong&gt; Provider Name&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Date & Time:&lt;/strong&gt; May 25, 2025 at 10:00 AM&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="booking-actions"&gt;
+    &lt;button class="btn btn-secondary"&gt;Reschedule&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                    
+                    <div class="usage-guidelines">
+                        <h4>Usage Guidelines</h4>
+                        <ul>
+                            <li>Use to display booking history and upcoming bookings</li>
+                            <li>Include clear status indicators for each booking</li>
+                            <li>Provide relevant actions based on the booking status (reschedule, cancel, review)</li>
+                            <li>Display the most important booking details prominently</li>
+                            <li>Consider adding a "View Details" link for additional information</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accessibility-note">
+                <h5>Card Accessibility</h5>
+                <ul>
+                    <li>Ensure all text has sufficient contrast against the background</li>
+                    <li>Use proper heading hierarchy within cards</li>
+                    <li>Make sure all interactive elements are keyboard accessible</li>
+                    <li>Provide alternative text for images</li>
+                    <li>Ensure status indicators use both color and text to convey information</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="form-elements">
+            <h2 class="section-title">Form Elements</h2>
+            <p>Form elements are used to collect user input. HomeSwift uses consistent form elements across all platforms.</p>
+            
+            <div class="subsection">
+                <h3>Input Fields</h3>
+                <p>Input fields allow users to enter text data. They are used for various types of information collection.</p>
+                
+                <div class="component-showcase">
+                    <div class="component-variants">
+                        <div class="component-variant">
+                            <div class="input-container">
+                                <label for="input-default">Default Input</label>
+                                <input type="text" id="input-default" class="input-field" placeholder="Enter text">
+                            </div>
+                        </div>
+                        <div class="component-variant">
+                            <div class="input-container">
+                                <label for="input-focus">Focused Input</label>
+                                <input type="text" id="input-focus" class="input-field input-focus" placeholder="Enter text">
+                            </div>
+                        </div>
+                        <div class="component-variant">
+                            <div class="input-container">
+                                <label for="input-error">Error Input</label>
+                                <input type="text" id="input-error" class="input-field input-error" placeholder="Enter text">
+                                <div class="error-message">Please enter a valid value</div>
+                            </div>
+                        </div>
+                        <div class="component-variant">
+                            <div class="input-container">
+                                <label for="input-disabled">Disabled Input</label>
+                                <input type="text" id="input-disabled" class="input-field input-disabled" placeholder="Enter text" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="component-specs">
+                        <h4>Specifications</h4>
+                        <p><strong>Background:</strong> White (#FFFFFF)</p>
+                        <p><strong>Border:</strong> 1px solid Gray (#808080)</p>
+                        <p><strong>Border Radius:</strong> 8px</p>
+                        <p><strong>Padding:</strong> 12px</p>
+                        <p><strong>Font:</strong> Poppins, 16px, Regular (400)</p>
+                        <p><strong>Text Color:</strong> Midnight Blue (#00305C)</p>
+                        <p><strong>Placeholder Color:</strong> Gray (#808080)</p>
+                        <p><strong>Focus State:</strong> Green Lime (#37C640) border</p>
+                        <p><strong>Error State:</strong> Red (#FF3B30) border with error message</p>
+                        <p><strong>Disabled State:</strong> Light Gray (#F5F5F5) background, 70% opacity</p>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>HTML</h4>
+                        <pre><code class="language-html">&lt;div class="input-container"&gt;
+  &lt;label for="input-default"&gt;Default Input&lt;/label&gt;
+  &lt;input type="text" id="input-default" class="input-field" placeholder="Enter text"&gt;
+&lt;/div&gt;
+
+&lt;div class="input-container"&gt;
+  &lt;label for="input-error"&gt;Error Input&lt;/label&gt;
+  &lt;input type="text" id="input-error" class="input-field input-error" placeholder="Enter text"&gt;
+  &lt;div class="error-message"&gt;Please enter a valid value&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                    
+                    <div class="usage-guidelines">
+                        <h4>Usage Guidelines</h4>
+                        <ul>
+                            <li>Always use labels for input fields</li>
+                            <li>Use placeholder text to provide examples or hints, not as a replacement for labels</li>
+                            <li>Provide clear error messages when validation fails</li>
+                            <li>Group related fields together</li>
+                            <li>Use appropriate input types (text, email, tel, etc.)</li>
+                            <li>Consider using input masks for formatted data (phone numbers, dates)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 HomeSwift. All rights reserved.</p>
+            <p>This design system is confidential and proprietary to HomeSwift.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
