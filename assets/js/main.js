@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
   setActiveNavLink();
   window.addEventListener('scroll', setActiveNavLink);
 
-  // Smooth scrolling for internal section links only
+  // Smooth scrolling for in-page anchor links only
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
 
-      // Only intercept in-page anchor links (starting with #)
-      if (href.startsWith('#')) {
+      // If it's an in-page anchor (starts with #), apply smooth scroll
+      if (href && href.startsWith('#')) {
         e.preventDefault();
         const targetSection = document.querySelector(href);
         if (targetSection) {
@@ -46,19 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
           });
         }
       }
-      // External and page navigation links will behave normally
+      // Otherwise: it's a page link → allow browser to navigate normally
     });
   });
 
-  // Color contrast calculation display
-  const contrastLabels = document.querySelectorAll('.contrast-label');
-
-  contrastLabels.forEach(label => {
-    // The contrast values are pre-calculated and included in the HTML
-    // This is just for demonstration purposes
-  });
-
-  // Interactive component states (for demonstration)
+  // Interactive component hover/focus/pressed demo states
   const hoverButtons = document.querySelectorAll('.btn:not(.btn-hover):not(.btn-pressed):not(.btn-focus):not(.btn-disabled)');
 
   hoverButtons.forEach(button => {
