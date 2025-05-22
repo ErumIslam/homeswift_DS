@@ -1,6 +1,6 @@
 // HomeSwift Design System JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Navigation active state
   const navLinks = document.querySelectorAll('.nav-list a');
   const sections = document.querySelectorAll('section');
@@ -30,23 +30,23 @@ document.addEventListener('DOMContentLoaded', function() {
   setActiveNavLink();
   window.addEventListener('scroll', setActiveNavLink);
 
-  // Smooth scrolling for in-page anchor links only
+  // Handle smooth scrolling for in-page anchor links only
   navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
 
-      // If it's an in-page anchor (starts with #), apply smooth scroll
+      // Only intercept links that start with #
       if (href && href.startsWith('#')) {
-        e.preventDefault();
         const targetSection = document.querySelector(href);
         if (targetSection) {
+          e.preventDefault();
           window.scrollTo({
             top: targetSection.offsetTop - 70,
             behavior: 'smooth'
           });
         }
       }
-      // Otherwise: it's a page link → allow browser to navigate normally
+      // Otherwise, let browser navigate normally (e.g. pages/components.html)
     });
   });
 
@@ -54,27 +54,27 @@ document.addEventListener('DOMContentLoaded', function() {
   const hoverButtons = document.querySelectorAll('.btn:not(.btn-hover):not(.btn-pressed):not(.btn-focus):not(.btn-disabled)');
 
   hoverButtons.forEach(button => {
-    button.addEventListener('mouseover', function() {
+    button.addEventListener('mouseover', function () {
       this.classList.add('btn-hover-demo');
     });
 
-    button.addEventListener('mouseout', function() {
+    button.addEventListener('mouseout', function () {
       this.classList.remove('btn-hover-demo');
     });
 
-    button.addEventListener('mousedown', function() {
+    button.addEventListener('mousedown', function () {
       this.classList.add('btn-pressed-demo');
     });
 
-    button.addEventListener('mouseup', function() {
+    button.addEventListener('mouseup', function () {
       this.classList.remove('btn-pressed-demo');
     });
 
-    button.addEventListener('focus', function() {
+    button.addEventListener('focus', function () {
       this.classList.add('btn-focus-demo');
     });
 
-    button.addEventListener('blur', function() {
+    button.addEventListener('blur', function () {
       this.classList.remove('btn-focus-demo');
     });
   });
