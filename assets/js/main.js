@@ -27,4 +27,85 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Initial call and scroll event
-  setActi
+  setActiveNavLink();
+  window.addEventListener('scroll', setActiveNavLink);
+
+  // Smooth scrolling for internal section links only
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+
+      // Only intercept in-page anchor links (starting with #)
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const targetSection = document.querySelector(href);
+        if (targetSection) {
+          window.scrollTo({
+            top: targetSection.offsetTop - 70,
+            behavior: 'smooth'
+          });
+        }
+      }
+      // External and page navigation links will behave normally
+    });
+  });
+
+  // Color contrast calculation display
+  const contrastLabels = document.querySelectorAll('.contrast-label');
+
+  contrastLabels.forEach(label => {
+    // The contrast values are pre-calculated and included in the HTML
+    // This is just for demonstration purposes
+  });
+
+  // Interactive component states (for demonstration)
+  const hoverButtons = document.querySelectorAll('.btn:not(.btn-hover):not(.btn-pressed):not(.btn-focus):not(.btn-disabled)');
+
+  hoverButtons.forEach(button => {
+    button.addEventListener('mouseover', function() {
+      this.classList.add('btn-hover-demo');
+    });
+
+    button.addEventListener('mouseout', function() {
+      this.classList.remove('btn-hover-demo');
+    });
+
+    button.addEventListener('mousedown', function() {
+      this.classList.add('btn-pressed-demo');
+    });
+
+    button.addEventListener('mouseup', function() {
+      this.classList.remove('btn-pressed-demo');
+    });
+
+    button.addEventListener('focus', function() {
+      this.classList.add('btn-focus-demo');
+    });
+
+    button.addEventListener('blur', function() {
+      this.classList.remove('btn-focus-demo');
+    });
+  });
+
+  // Add CSS classes for interactive demo states
+  const style = document.createElement('style');
+  style.textContent = `
+    .btn-hover-demo {
+      background-color: #4b0077 !important;
+    }
+    .btn-secondary.btn-hover-demo {
+      background-color: rgba(0, 48, 92, 0.05) !important;
+    }
+    .btn-pressed-demo {
+      background-color: #2d0046 !important;
+    }
+    .btn-secondary.btn-pressed-demo {
+      background-color: rgba(0, 48, 92, 0.1) !important;
+    }
+    .btn-focus-demo {
+      outline: 2px solid #37C640 !important;
+      outline-offset: 2px !important;
+    }
+  `;
+  document.head.appendChild(style);
+});
